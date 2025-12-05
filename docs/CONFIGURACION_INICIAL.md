@@ -214,9 +214,9 @@ Ahora puedes:
 ## 📞 Soporte
 
 Si tienes problemas:
-- Lee [PARA_PROFESOR.md](../PARA_PROFESOR.md)
 - Revisa [scripts/README.md](../scripts/README.md)
-- Email: cursos@todoeconometria.com
+- Crea un [Issue](../../issues) describiendo el problema
+- Email para consultoría: cursos@todoeconometria.com
 
 ---
 

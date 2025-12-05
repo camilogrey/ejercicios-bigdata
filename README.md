@@ -12,9 +12,9 @@
 
 **👨‍🎓 ¿Eres alumno?** → Lee **[PARA_ALUMNOS.md](PARA_ALUMNOS.md)**
 
-**👨‍🏫 ¿Eres profesor/colaborador?** → Lee **[PARA_PROFESOR.md](PARA_PROFESOR.md)**
-
 **👀 ¿Solo curioseas?** → Explora los **[ejemplos destacados](dashboards/ejemplos-destacados/)**
+
+**🤝 ¿Quieres contribuir?** → Crea un [Issue](../../issues) o [Pull Request](../../pulls)
 
 ---
 
@@ -108,7 +108,7 @@ Este es un proyecto educativo **open source**. Las contribuciones son bienvenida
 2. **Dashboards educativos** - Comparte tu trabajo
 3. **Datasets adicionales** - Propón nuevos datasets para ejercicios
 
-[Ver guía de contribución →](PARA_PROFESOR.md#contribuciones-externas)
+**Nota:** Si tienes dudas sobre cómo contribuir, crea un [Issue](../../issues) preguntando.
 
 ---
 
@@ -156,10 +156,8 @@ Este repositorio es mi **portafolio educativo**. Si necesitas servicios profesio
 ## 📖 Documentación Completa
 
 - **[PARA_ALUMNOS.md](PARA_ALUMNOS.md)** - Guía completa para estudiantes
-- **[PARA_PROFESOR.md](PARA_PROFESOR.md)** - Gestión del repositorio
-- **[ARQUITECTURA.md](ARQUITECTURA.md)** - Stack técnico y estructura
-- **[docs/FAQ.md](docs/FAQ.md)** - Preguntas frecuentes
-- **[docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** - Solución de problemas
+- **[Ejemplos Destacados](dashboards/ejemplos-destacados/)** - Los mejores trabajos
+- **[Guía de Scripts](scripts/README.md)** - Herramientas de automatización
 
 ---
 

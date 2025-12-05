@@ -125,8 +125,9 @@ Sigue las instrucciones en pantalla:
 
 ## 📖 Documentación Completa
 
-Para flujos detallados y casos de uso:
-- [PARA_PROFESOR.md](../PARA_PROFESOR.md) - Guía completa de gestión
+Para más información:
+- [Guía de Configuración](../docs/CONFIGURACION_INICIAL.md) - Setup inicial del sistema
+- [Ejemplos Destacados](../dashboards/ejemplos-destacados/) - Trabajos de referencia
 
 ---
 

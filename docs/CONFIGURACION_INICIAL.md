@@ -1,6 +1,6 @@
 # ⚙️ Configuración Inicial del Repositorio
 
-## 🛡️ PASO 1: Proteger la Branch `main`
+## 🛡️ Paso 1: Proteger la Branch Main
 
 **IMPORTANTE:** Esto evita que alguien (incluido tú) pueda pushear directo a `main` sin PR.
 

@@ -4,7 +4,7 @@
 
 - **Nombre:** [Tu nombre completo]
 - **GitHub:** @[tu-usuario]
-- **Curso:** [Ej: 2025-01]
+- **Curso:** [Ejemplo: 2025-01]
 
 ---
 

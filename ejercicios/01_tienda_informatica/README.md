@@ -1,9 +1,9 @@
-# 📚 Ejercicio 05: Base de Datos Relacional - Tienda Informática
+# 📚 Ejercicio 01: Base de Datos Relacional - Tienda Informática
 
 ## 📁 Estructura del Ejercicio
 
 ```
-05_tienda_informatica/
+01_tienda_informatica/
 ├── datos/
 │   ├── .gitkeep
 │   └── csv_tienda_informatica/     ← Aquí colocas los CSVs (25 archivos)
@@ -35,7 +35,7 @@ El archivo se llama `csv_tienda_informatica.zip` (~15 MB)
 
 ```bash
 # 1. Navega al ejercicio
-cd ejercicios/05_tienda_informatica
+cd ejercicios/01_tienda_informatica
 
 # 2. Crea la carpeta de datos si no existe
 mkdir -p datos/csv_tienda_informatica
@@ -89,7 +89,7 @@ Lee el archivo [`ENUNCIADO.md`](./ENUNCIADO.md) para el detalle completo.
 **IMPORTANTE**: Los alumnos deben crear su solución en un **fork del repositorio** siguiendo esta estructura:
 
 ```
-ejercicios/05_tienda_informatica/
+ejercicios/01_tienda_informatica/
 │
 └── soluciones/
     └── apellido_nombre/              ← TU CARPETA PERSONAL
@@ -143,17 +143,17 @@ cd ejercicios-bigdata
 
 ```bash
 # Descarga el ZIP desde el link proporcionado
-# Colócalo en ejercicios/05_tienda_informatica/
+# Colócalo en ejercicios/01_tienda_informatica/
 
-cd ejercicios/05_tienda_informatica
+cd ejercicios/01_tienda_informatica
 unzip csv_tienda_informatica.zip -d datos/
 ```
 
 ### Paso 3: Crea Tu Rama de Trabajo
 
 ```bash
-# Formato: tu-apellido-ejercicio05
-git checkout -b garcia-maria-ejercicio05
+# Formato: tu-apellido-ejercicio01
+git checkout -b garcia-maria-ejercicio01
 
 # Verifica que estás en la rama correcta
 git branch
@@ -199,10 +199,10 @@ CREATE TABLE categorias (
 git add soluciones/garcia_maria/
 
 # Commit con mensaje descriptivo
-git commit -m "Ejercicio 05: Implementación base de datos tienda informática - García María"
+git commit -m "Ejercicio 01: Implementación base de datos tienda informática - García María"
 
 # Push a TU fork
-git push origin garcia-maria-ejercicio05
+git push origin garcia-maria-ejercicio01
 ```
 
 ### Paso 7: Pull Request
@@ -211,7 +211,7 @@ git push origin garcia-maria-ejercicio05
 2. Haz clic en "Compare & pull request"
 3. **Base repository**: `TodoEconometria/ejercicios-bigdata` (main)
 4. **Head repository**: `TU_USUARIO/ejercicios-bigdata` (tu-rama)
-5. Título: `Ejercicio 05 - Apellido Nombre`
+5. Título: `Ejercicio 01 - Apellido Nombre`
 6. Descripción: Resumen de tu trabajo
 7. Crea el Pull Request
 
@@ -246,7 +246,7 @@ git push origin garcia-maria-ejercicio05
 
 3. **NO trabajes en la rama `main`**
    - Crea tu propia rama de trabajo
-   - Usa el formato: `tu-apellido-ejercicio05`
+   - Usa el formato: `tu-apellido-ejercicio01`
 
 4. **NO copies soluciones de otros**
    - Está prohibido

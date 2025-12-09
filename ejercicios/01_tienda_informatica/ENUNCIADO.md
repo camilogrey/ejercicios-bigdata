@@ -1,4 +1,4 @@
-# 📚 EJERCICIO 05: Diseño e Implementación de Base de Datos Relacional
+# 📚 EJERCICIO 01: Diseño e Implementación de Base de Datos Relacional
 
 ## 🎯 Objetivo del Ejercicio
 
@@ -240,7 +240,7 @@ CREATE TABLE cpus (
 ## 📤 Formato de Entrega
 
 ```
-apellido_nombre_ejercicio05.zip
+apellido_nombre_ejercicio01.zip
 │
 ├── analisis/
 │   └── exploracion_datos.md (o .ipynb)

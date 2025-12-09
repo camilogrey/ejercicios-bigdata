@@ -1,4 +1,4 @@
-# 💡 AYUDA - Ejercicio 05
+# 💡 AYUDA - Ejercicio 01
 
 ## 🎯 Pistas y Consejos (Sin Spoilers)
 

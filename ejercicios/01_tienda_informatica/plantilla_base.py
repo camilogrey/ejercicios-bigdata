@@ -1,5 +1,5 @@
 """
-PLANTILLA BÁSICA - Ejercicio 05
+PLANTILLA BÁSICA - Ejercicio 01
 ================================
 Este archivo contiene ejemplos BÁSICOS de conexión a bases de datos.
 NO es el código completo - tú debes escribir tu propia solución.
@@ -245,7 +245,7 @@ Consulta la documentación oficial:
 
 if __name__ == "__main__":
     print("=" * 50)
-    print("PLANTILLA BÁSICA - Ejercicio 05")
+    print("PLANTILLA BÁSICA - Ejercicio 01")
     print("=" * 50)
     print("\nEste archivo contiene ejemplos de referencia.")
     print("NO es el código completo del ejercicio.")

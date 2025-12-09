@@ -43,3 +43,7 @@ ENV/
 soluciones/
 entregas/
 mi_solucion/
+
+#mds no entregables
+INSTRUCCIONES_PROFESOR.md
+ISSUE_TEMPLATE.md

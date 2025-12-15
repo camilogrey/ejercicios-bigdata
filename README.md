@@ -1377,36 +1377,388 @@ Cuando haces fork del repositorio, obtienes una **copia en ese momento**. Durant
 └─────────────────────────────────────────────────────────┘
 ```
 
-### ✅ Solución: Sincroniza Semanalmente
+---
 
-Tienes **2 métodos** para mantener tu fork actualizado:
+### 🔀 Flujo de Trabajo Recomendado con Ramas
 
-#### Método 1: Desde la Terminal (3 comandos)
+**Este es el flujo que evita problemas:**
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│         FLUJO DE TRABAJO CON FORK + RAMAS                      │
+├────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  📚 Repo del Profesor (upstream)                               │
+│  ┌──────────────────────────────────────┐                     │
+│  │ main: [01] [02] [03] [04] [05]       │                     │
+│  └──────────────────────────────────────┘                     │
+│                    │                                            │
+│                    │ fork inicial                              │
+│                    ↓                                            │
+│  👤 Tu Fork en GitHub (origin)                                 │
+│  ┌──────────────────────────────────────┐                     │
+│  │ main: [01] [02] [03] [04] [05]       │ ← Sincronizado      │
+│  │                                       │   con upstream      │
+│  │ garcia-ejercicio-1.1:                │                     │
+│  │   [01] [02] + tus archivos           │ ← Tu trabajo        │
+│  └──────────────────────────────────────┘                     │
+│                    │                                            │
+│                    │ git clone                                 │
+│                    ↓                                            │
+│  💻 Tu PC (local)                                              │
+│  ┌──────────────────────────────────────┐                     │
+│  │ main: [01] [02] [03] [04] [05]       │ ← NO TOCAR          │
+│  │                                       │                     │
+│  │ garcia-ejercicio-1.1:                │ ← TRABAJAR AQUÍ     │
+│  │   [01] [02] + entregas/1.1_sqlite/   │                     │
+│  │              garcia_maria/           │                     │
+│  └──────────────────────────────────────┘                     │
+│                                                                 │
+│  REGLA DE ORO:                                                 │
+│  ✅ main = Sincronizado con el profesor (solo recibe)         │
+│  ✅ tu-rama = Tu trabajo (donde editas)                        │
+│                                                                 │
+└────────────────────────────────────────────────────────────────┘
+```
+
+**Ventajas de este flujo:**
+
+1. **main siempre limpio** → Fácil de sincronizar con el profesor
+2. **Tu trabajo aislado** → Nunca hay conflictos con ejercicios nuevos
+3. **Puedes tener múltiples entregas** → Una rama por ejercicio
+
+---
+
+### ❌ Problema Común: "No Puedo Sincronizar mi Rama"
+
+**Situación que describe un alumno:**
+
+> "Cuando el profesor agrega archivos nuevos, me deja actualizar el main, pero en mi rama (donde tengo mis archivos) no me deja hacerlo sin eliminar mis commits."
+
+**Diagrama del problema:**
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│              ❌ FLUJO INCORRECTO (CAUSA PROBLEMAS)             │
+├────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  SEMANA 1 - Hiciste fork y creaste una rama                   │
+│  ─────────────────────────────────────────                     │
+│                                                                 │
+│  Repo Profesor:                                                │
+│  └─ main: [01] [02]                                            │
+│                                                                 │
+│  Tu Fork (origin):                                             │
+│  ├─ main: [01] [02]                                            │
+│  └─ garcia-ejercicio: [01] [02]                                │
+│                                                                 │
+│  Tu PC (local):                                                │
+│  └─ garcia-ejercicio: [01] [02] + TUS ARCHIVOS ✅              │
+│                                                                 │
+│  ══════════════════════════════════════════════════════        │
+│                                                                 │
+│  SEMANA 3 - Profesor agregó [03] [04] [05]                    │
+│  ───────────────────────────────────────────                   │
+│                                                                 │
+│  Repo Profesor:                                                │
+│  └─ main: [01] [02] [03] [04] [05] ← NUEVO                    │
+│                                                                 │
+│  ⚠️ Intentas sincronizar...                                    │
+│                                                                 │
+│  Tu PC (local):                                                │
+│  ├─ main: [01] [02] [03] [04] [05] ← Actualizado OK           │
+│  └─ garcia-ejercicio: [01] [02] + TUS ARCHIVOS                 │
+│                       ↑                                         │
+│                       └─ DESACTUALIZADO ❌                      │
+│                          (le faltan 03, 04, 05)                │
+│                                                                 │
+│  ⚠️ Si haces: git merge main                                   │
+│     Git dice: "CONFLICT! Debes elegir entre tus archivos      │
+│                o los del profesor"                             │
+│                                                                 │
+│  ❌ SOLUCIÓN INCORRECTA (NO HAGAS ESTO):                       │
+│     "Eliminar tus commits para actualizar"                     │
+│     → Pierdes todo tu trabajo 💀                               │
+│                                                                 │
+└────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### ✅ Solución Correcta: Cómo Sincronizar con Tu Rama de Trabajo
+
+**Paso a Paso (NO perderás tu trabajo):**
+
+```bash
+# PASO 1: Asegúrate de estar en tu rama de trabajo
+git checkout garcia-ejercicio-1.1  # (tu rama)
+git status  # Verificar que no hay cambios sin guardar
+
+# PASO 2: Si tienes cambios sin guardar, guárdalos primero
+git add entregas/1.1_sqlite/garcia_maria/
+git commit -m "WIP: Avance en ejercicio 1.1"
+
+# PASO 3: Cambia a main y sincroniza con el profesor
+git checkout main
+git fetch upstream
+git merge upstream/main
+# Ahora tu main local tiene [03] [04] [05] ✅
+
+# PASO 4: Vuelve a tu rama y trae los ejercicios nuevos
+git checkout garcia-ejercicio-1.1
+git merge main
+# O si prefieres rebase (más limpio):
+# git rebase main
+
+# PASO 5: Resolver conflictos (si los hay)
+# Git te dirá qué archivos tienen conflictos
+# Edítalos manualmente (ver sección abajo)
+
+# PASO 6: Push a tu fork
+git push origin garcia-ejercicio-1.1
+```
+
+**Diagrama de la solución:**
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│              ✅ FLUJO CORRECTO (SIN PERDER TRABAJO)            │
+├────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ANTES:                                                        │
+│  ──────                                                        │
+│  main:              [01] [02]                                  │
+│  garcia-ejercicio:  [01] [02] + TUS ARCHIVOS                   │
+│                                                                 │
+│  ⬇️ git checkout main                                          │
+│  ⬇️ git merge upstream/main                                    │
+│                                                                 │
+│  main:              [01] [02] [03] [04] [05] ✅                │
+│  garcia-ejercicio:  [01] [02] + TUS ARCHIVOS (sin cambios)     │
+│                                                                 │
+│  ⬇️ git checkout garcia-ejercicio                              │
+│  ⬇️ git merge main                                             │
+│                                                                 │
+│  DESPUÉS:                                                      │
+│  ────────                                                      │
+│  main:              [01] [02] [03] [04] [05]                   │
+│  garcia-ejercicio:  [01] [02] [03] [04] [05] + TUS ARCHIVOS ✅ │
+│                                                                 │
+│  ✅ RESULTADO:                                                 │
+│     - Tienes los ejercicios nuevos del profesor               │
+│     - TU TRABAJO SIGUE INTACTO                                 │
+│     - Listo para crear Pull Request                            │
+│                                                                 │
+└────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 🔧 ¿Qué Hacer si Aparecen Conflictos?
+
+**Escenario:** El profesor modificó un archivo que TÚ también modificaste.
+
+**Ejemplo de conflicto:**
+
+```bash
+Auto-merging ejercicios/01_cargar_sqlite.py
+CONFLICT (content): Merge conflict in ejercicios/01_cargar_sqlite.py
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+**Pasos para resolverlo:**
+
+**1. Abre el archivo con conflicto:**
+
+```python
+# ejercicios/01_cargar_sqlite.py
+
+<<<<<<< HEAD (tu versión)
+# Tu código aquí
+resultado = calcular_promedio(df)
+=======
+# Versión del profesor
+resultado = calcular_mediana(df)
+>>>>>>> main
+```
+
+**2. Decide qué mantener:**
+
+```python
+# Opción A: Mantener solo la del profesor (si no habías empezado)
+resultado = calcular_mediana(df)
+
+# Opción B: Mantener solo la tuya (si es tu entrega)
+resultado = calcular_promedio(df)
+
+# Opción C: Mantener ambas (si no son excluyentes)
+resultado_promedio = calcular_promedio(df)
+resultado_mediana = calcular_mediana(df)
+```
+
+**3. Eliminar las marcas de conflicto:**
+
+Borra estas líneas del archivo:
+```
+<<<<<<< HEAD
+=======
+>>>>>>> main
+```
+
+**4. Guardar y completar el merge:**
+
+```bash
+git add ejercicios/01_cargar_sqlite.py
+git commit -m "Resolver conflicto: mantener ambas versiones"
+git push origin garcia-ejercicio-1.1
+```
+
+---
+
+### 🎯 Estrategia Recomendada para Evitar Conflictos
+
+**1. Trabaja solo en la carpeta `entregas/`:**
+
+```
+✅ BIEN - Solo editas tu carpeta de entrega
+entregas/1.1_sqlite/garcia_maria/
+├── ANALISIS_DATOS.md      ← TUS archivos
+├── resumen_eda.md          ← TUS archivos
+└── REFLEXION.md            ← TUS archivos
+
+❌ MAL - Editas archivos del profesor
+ejercicios/01_bases_de_datos/1.1_introduccion_sqlite/
+├── README.md                ← NO TOCAR
+├── eda_exploratorio.py      ← NO TOCAR (solo ejecutar)
+└── ANALISIS_DATOS.md        ← NO TOCAR (es plantilla)
+```
+
+**Si trabajas solo en `entregas/TU_CARPETA/`, NUNCA tendrás conflictos** porque el profesor nunca toca esa carpeta.
+
+**2. Sincroniza antes de empezar un ejercicio nuevo:**
+
+```bash
+# ✅ BUENA práctica
+git checkout main
+git merge upstream/main      # Traer ejercicios nuevos
+git checkout garcia-ejercicio-1.1
+git merge main               # Actualizar tu rama
+# Ahora empieza a trabajar
+
+# ❌ MALA práctica
+# Trabajar durante semanas sin sincronizar
+# → Acumulas conflictos
+```
+
+**3. Un ejercicio = Una rama:**
+
+```bash
+# ✅ BIEN - Ramas separadas
+garcia-ejercicio-1.1    # Para ejercicio 1.1
+garcia-ejercicio-1.2    # Para ejercicio 1.2
+garcia-ejercicio-2.1    # Para ejercicio 2.1
+
+# ❌ MAL - Todo en una rama
+garcia-todos-los-ejercicios  # Mezcla todo
+```
+
+---
+
+### 📋 Resumen Rápido: Sincronización con Ramas
+
+**Flujo completo en 6 comandos:**
+
+```bash
+# 1. Guardar tu trabajo
+git add .
+git commit -m "WIP: mi avance"
+
+# 2. Actualizar main
+git checkout main
+git fetch upstream && git merge upstream/main
+
+# 3. Volver a tu rama y traer cambios
+git checkout tu-rama
+git merge main
+
+# 4. (Si hay conflictos, resolverlos)
+# Editar archivos → Eliminar marcas de conflicto
+
+# 5. Completar merge
+git add .
+git commit -m "Sincronizar con upstream"
+
+# 6. Push
+git push origin tu-rama
+```
+
+---
+
+### 🔄 Métodos de Sincronización
+
+Tienes **3 métodos** para mantener tu fork actualizado:
+
+#### Método 1: Desde la Terminal (Control Total)
 
 ```bash
 git fetch upstream          # Descargar cambios del profesor
-git merge upstream/main     # Fusionar con tu código
+git checkout main           # Ir a tu main local
+git merge upstream/main     # Fusionar cambios
 git push origin main        # Actualizar tu fork en GitHub
 ```
 
-#### Método 2: Desde GitHub (más fácil)
+#### Método 2: Desde GitHub Web (Más Fácil)
 
 1. Ve a tu fork en GitHub
 2. Click en **"Sync fork"** → **"Update branch"**
 3. En tu PC: `git pull origin main`
 
+**⚠️ Importante:** Esto solo actualiza `main`. Si trabajas en otra rama, debes hacer `git merge main` después.
+
+#### Método 3: Automatizado con Script
+
+Crea un archivo `sync.sh`:
+
+```bash
+#!/bin/bash
+echo "Sincronizando con repo del profesor..."
+git checkout main
+git fetch upstream
+git merge upstream/main
+git push origin main
+echo "✅ main actualizado"
+echo "Recuerda hacer: git checkout TU_RAMA && git merge main"
+```
+
+Uso:
+```bash
+chmod +x sync.sh
+./sync.sh
+```
+
+---
+
 ### 📅 Frecuencia Recomendada
 
 ```
 🔄 Cada Lunes antes de clase
-   └─ Sincroniza para tener los ejercicios nuevos
+   └─ Sincroniza main con upstream
+   └─ Luego actualiza tu rama de trabajo
 
 💻 Durante la semana
    └─ Trabaja normalmente en tus ejercicios
+   └─ Commits frecuentes a tu rama
 
 📤 Cada Viernes
-   └─ Push de tu progreso a GitHub
+   └─ Push de tu avance a origin
+   └─ Verificar que no hay ejercicios nuevos
+
+🎯 Antes de crear un PR
+   └─ Sincroniza una última vez
+   └─ Asegura que tienes todo actualizado
 ```
+
+---
 
 ### 📖 Guía Completa
 

@@ -135,11 +135,11 @@ Scripts SQL están en: `datos/jardineria/`
 
 ## Entregas
 
-Consulta las [instrucciones de entrega](../../entregas/2.2_postgresql_jardineria/) para saber qué archivos debes subir.
+Consulta las [instrucciones de entrega](../../entregas/01_bases_de_datos/) para saber qué archivos debes subir.
 
 **Carpeta de entrega:**
 ```
-entregas/2.2_postgresql_jardineria/tu_apellido_nombre/
+entregas/01_bases_de_datos/tu_apellido_nombre/2.2_postgresql_jardineria/
 ```
 
 ---

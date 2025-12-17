@@ -197,11 +197,11 @@ pip install pandas openpyxl matplotlib seaborn jupyter
 
 ## Entregas
 
-Consulta las [instrucciones de entrega](../../entregas/5.1_analisis_excel/) para saber qué archivos debes subir.
+Consulta las [instrucciones de entrega](../../entregas/01_bases_de_datos/) para saber qué archivos debes subir.
 
 **Carpeta de entrega:**
 ```
-entregas/5.1_analisis_excel/tu_apellido_nombre/
+entregas/01_bases_de_datos/tu_apellido_nombre/5.1_analisis_excel/
 ├── analisis_exploratorio.py
 ├── informe_analisis.md
 ├── graficos/

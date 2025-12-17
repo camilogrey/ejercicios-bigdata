@@ -129,11 +129,11 @@ Scripts de la BD HR están en: `datos/oracle_hr/`
 
 ## Entregas
 
-Consulta las [instrucciones de entrega](../../entregas/2.1_postgresql_hr/) para saber qué archivos debes subir.
+Consulta las [instrucciones de entrega](../../entregas/01_bases_de_datos/) para saber qué archivos debes subir.
 
 **Carpeta de entrega:**
 ```
-entregas/2.1_postgresql_hr/tu_apellido_nombre/
+entregas/01_bases_de_datos/tu_apellido_nombre/2.1_postgresql_hr/
 ```
 
 ---

@@ -1,6 +1,6 @@
 # Entregas de Ejercicios
 
-Esta carpeta contiene las entregas de todos los alumnos, organizadas por ejercicio.
+Esta carpeta contiene las entregas de todos los alumnos, organizadas por **módulo**.
 
 ---
 
@@ -8,17 +8,23 @@ Esta carpeta contiene las entregas de todos los alumnos, organizadas por ejercic
 
 ```
 entregas/
-├── 1.1_sqlite/              # Ejercicio 1.1 - Introducción SQLite
-├── 2.1_postgresql_hr/       # Ejercicio 2.1 - PostgreSQL con BD HR
-├── 2.2_postgresql_jardineria/  # Ejercicio 2.2 - PostgreSQL Jardinería
-├── 2.3_postgresql_tienda/   # Ejercicio 2.3 - Migración SQLite → PostgreSQL
-├── 3.1_oracle_hr/           # Ejercicio 3.1 - Oracle con BD HR
-├── 3.2_oracle_jardineria/   # Ejercicio 3.2 - Oracle Jardinería
-├── 4.1_sqlserver_tienda/    # Ejercicio 4.1 - SQL Server Tienda
-└── 5.1_analisis_excel/      # Ejercicio 5.1 - Análisis con Excel/Python
+├── 01_bases_de_datos/       # MÓDULO 01: Todos los ejercicios de bases de datos
+│   ├── 1.1_sqlite/          # Plantilla/ejemplo ejercicio 1.1
+│   ├── 2.1_postgresql_hr/   # Plantilla/ejemplo ejercicio 2.1
+│   ├── 2.2_postgresql_jardineria/
+│   ├── 2.3_postgresql_tienda/
+│   ├── 3.1_oracle_hr/
+│   ├── 3.2_oracle_jardineria/
+│   ├── 4.1_sqlserver_tienda/
+│   ├── 5.1_analisis_excel/
+│   └── apellido_nombre/     # ← Aquí creas TU carpeta con TODOS tus ejercicios del módulo
+│
+└── 02_limpieza_datos/       # MÓDULO 02: Pipeline ETL QoG
+    └── apellido_nombre/     # ← Aquí creas TU carpeta para este módulo
 ```
 
-Cada carpeta contiene subcarpetas de alumnos con formato: `apellido_nombre/`
+**Importante:** Las carpetas numeradas (1.1, 2.1, etc.) son **plantillas/ejemplos**.
+**TÚ creas** una carpeta `apellido_nombre/` dentro del módulo y organizas tus entregas ahí.
 
 ---
 
@@ -35,10 +41,35 @@ Cada carpeta de ejercicio también contiene un `README.md` con instrucciones esp
 ## Formato de Carpetas por Alumno
 
 ```
-entregas/X.X_ejercicio/apellido_nombre/
+entregas/XX_modulo/apellido_nombre/
 ```
 
-**Reglas del nombre:**
+**Ejemplos:**
+
+**Módulo 01 - Bases de Datos:**
+```
+entregas/01_bases_de_datos/garcia_maria/
+├── 1.1_sqlite/
+│   ├── README.md
+│   └── queries.sql
+├── 2.1_postgresql_hr/
+│   ├── README.md
+│   └── queries.sql
+└── 5.1_analisis_excel/
+    ├── README.md
+    └── script.py
+```
+
+**Módulo 02 - Limpieza de Datos:**
+```
+entregas/02_limpieza_datos/garcia_maria/
+├── README.md
+├── src/
+├── scripts/
+└── sql/
+```
+
+**Reglas del nombre de carpeta:**
 - Todo en minúsculas
 - Sin tildes ni caracteres especiales
 - Formato: `apellido_nombre` (apellido primero)

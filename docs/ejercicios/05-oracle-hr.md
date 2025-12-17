@@ -136,11 +136,11 @@ Scripts SQL originales de Oracle están en: `datos/oracle_hr/`
 
 ## Entregas
 
-Consulta las [instrucciones de entrega](../../entregas/3.1_oracle_hr/) para saber qué archivos debes subir.
+Consulta las [instrucciones de entrega](../../entregas/01_bases_de_datos/) para saber qué archivos debes subir.
 
 **Carpeta de entrega:**
 ```
-entregas/3.1_oracle_hr/tu_apellido_nombre/
+entregas/01_bases_de_datos/tu_apellido_nombre/3.1_oracle_hr/
 ```
 
 ---

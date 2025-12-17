@@ -184,11 +184,11 @@ Tus bases de datos del Ejercicio 1.1:
 
 ## Entregas
 
-Consulta las [instrucciones de entrega](../../entregas/2.3_postgresql_tienda/) para saber qué archivos debes subir.
+Consulta las [instrucciones de entrega](../../entregas/01_bases_de_datos/) para saber qué archivos debes subir.
 
 **Carpeta de entrega:**
 ```
-entregas/2.3_postgresql_tienda/tu_apellido_nombre/
+entregas/01_bases_de_datos/tu_apellido_nombre/2.3_postgresql_tienda/
 ├── migracion_desde_sqlite.py
 ├── comparativa_sqlite_vs_postgres.md
 └── capturas/

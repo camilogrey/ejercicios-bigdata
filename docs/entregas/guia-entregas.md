@@ -65,15 +65,16 @@ entregas/
 
 **Ejemplo:**
 ```
-entregas/1.1_sqlite/garcia_maria/
-├── solucion_modelo_a.py
-├── solucion_modelo_b.py
-├── ANALISIS_DATOS.md
-├── consultas.sql
-├── capturas/
-│   ├── screenshot1.png
-│   └── screenshot2.png
-└── notas_personales.txt
+entregas/01_bases_de_datos/garcia_maria/
+└── 1.1_sqlite/
+    ├── solucion_modelo_a.py
+    ├── solucion_modelo_b.py
+    ├── ANALISIS_DATOS.md
+    ├── consultas.sql
+    ├── capturas/
+    │   ├── screenshot1.png
+    │   └── screenshot2.png
+    └── notas_personales.txt
 ```
 
 ### ❌ NO Permitido
@@ -102,7 +103,7 @@ git push origin tu-rama
 Si prefieres, puedes comprimir todo en un ZIP:
 
 ```
-entregas/1.1_sqlite/garcia_maria.zip
+entregas/01_bases_de_datos/garcia_maria.zip
 ```
 
 **Nota:** La Opción 1 es preferida porque permite revisión más fácil.
@@ -160,7 +161,7 @@ mkdir -p entregas/X.X_ejercicio/apellido_nombre
 
 **Ejemplo:**
 ```bash
-mkdir -p entregas/1.1_sqlite/garcia_maria
+mkdir -p entregas/01_bases_de_datos/garcia_maria/1.1_sqlite
 ```
 
 ### Paso 6: Completar tus Archivos

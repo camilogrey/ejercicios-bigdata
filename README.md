@@ -6,6 +6,8 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 
+### [**Visita el sitio web del curso**](https://todoeconometria.github.io/ejercicios-bigdata/) — Documentacion, dashboards interactivos y guias completas.
+
 ---
 
 ## 👨‍🏫 Autor y Metodología

@@ -12,6 +12,11 @@ Cada pagina incluye analisis, graficos y codigo fuente.
 - [PCA + Clustering K-Means: Dataset Iris](02_pca_iris_clustering.md) -- Reduccion dimensional y agrupamiento sobre el dataset clasico de Fisher
 - [Manual PCA estilo FactoMineR](02_PCA_FactoMineR_style.md) -- Replicando el estandar de oro del analisis multivariante en Python
 
+### Series Temporales
+
+- [ARIMA/SARIMA - Metodologia Box-Jenkins](04_series_temporales_arima.md) -- Identificacion, estimacion, diagnostico y pronostico
+- [Dashboard ARIMA (interactivo)](04_series_temporales_arima.html){target="_blank"} -- 6 pestanas: serie, descomposicion, ACF/PACF, diagnostico, forecast, radar
+
 ### Dashboards interactivos (HTML)
 
 - [Dashboard PCA Iris (interactivo)](02_pca_iris_dashboard.html){target="_blank"} -- Visualizacion completa en pantalla

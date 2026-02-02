@@ -190,20 +190,24 @@ nav:
 
   - Ejercicios:
     - ejercicios/index.md
-    - 'Módulo 1: Bases de Datos':
+    - 'Modulo 1: Bases de Datos':
       - '1.1 - Introduccion SQLite': ejercicios/01-introduccion-sqlite.md
       - '2.1 - PostgreSQL HR': ejercicios/02-postgresql-hr.md
       - '2.2 - PostgreSQL Jardineria': ejercicios/03-postgresql-jardineria.md
-      - '2.3 - Migracion SQLite → PostgreSQL': ejercicios/04-migracion-sqlite-postgresql.md
+      - '2.3 - Migracion SQLite a PostgreSQL': ejercicios/04-migracion-sqlite-postgresql.md
       - '3.1 - Oracle HR': ejercicios/05-oracle-hr.md
       - '5.1 - Analisis Excel/Python': ejercicios/06-analisis-excel-python.md
-    - 'Módulo 2: Big Data ETL':
-      - 'Concepto Pipeline': ejercicios/02-pipeline-etl-qog.md
+    - 'Modulo 2: Big Data y ETL':
+      - 'Pipeline ETL QoG': ejercicios/02-pipeline-etl-qog.md
       - 'Procesamiento Distribuido': ejercicios/03-procesamiento-distribuido.md
-    - 'Módulo 3: Analítica Avanzada':
+    - 'Modulo 3: Analitica Avanzada':
       - 'Machine Learning': ejercicios/04-machine-learning.md
-      - 'NLP y Texto': ejercicios/05-nlp-mining.md
-    - 'Proyecto Final': ejercicios/06-trabajo-final-capstone.md
+      - 'Series Temporales ARIMA': ejercicios/07-series-temporales-arima.md
+      - 'NLP y Text Mining': ejercicios/05-nlp-mining.md
+    - 'Modulo 4: Econometria de Panel':
+      - 'Analisis de Datos de Panel': ejercicios/08-panel-data.md
+    - 'Trabajo Final':
+      - 'Enunciado y Plantilla': ejercicios/06-trabajo-final-capstone.md
 
   - Dashboards y Resultados:
     - dashboards/index.md

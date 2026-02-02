@@ -210,11 +210,15 @@ nav:
     - 'Machine Learning':
       - 'PCA + K-Means Iris': dashboards/02_pca_iris_clustering.md
       - 'PCA estilo FactoMineR': dashboards/02_PCA_FactoMineR_style.md
+    - 'Series Temporales':
+      - 'ARIMA/SARIMA Box-Jenkins': dashboards/04_series_temporales_arima.md
     - 'NLP y Text Mining':
       - 'Conteo de Palabras': dashboards/EJERCICIO_01_CONTEO.md
       - 'Filtro de Stopwords': dashboards/EJERCICIO_02_LIMPIEZA.md
       - 'Similitud de Jaccard': dashboards/04_similitud_jaccard.md
       - 'Vectorizacion y Clustering': dashboards/05_vectorizacion_y_clustering.md
+    - 'Datos de Panel (Big Data)':
+      - 'QoG - Spark + PostgreSQL + ML': dashboards/06_analisis_panel_qog.md
 
   - Entregas:
     - Guia General: entregas/guia-entregas.md

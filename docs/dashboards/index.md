@@ -33,9 +33,19 @@ Cada pagina incluye analisis, graficos y codigo fuente.
 
 ---
 
+## Analisis de Datos de Panel (Big Data)
+
+### Pipeline completo: Spark + PostgreSQL + ML
+
+- [Modulo 06: QoG - 4 Lineas de Investigacion + ML](06_analisis_panel_qog.md) -- Asia Central, Seguridad Hidrica, Terrorismo, Maghreb, PCA + K-Means
+- [Dashboard QoG (interactivo)](06_analisis_panel_qog.html){target="_blank"} -- 5 pestanas con graficos Plotly interactivos
+
+---
+
 ## Codigo fuente
 
 Los scripts que generan estas visualizaciones estan en:
 
 - `ejercicios/04_machine_learning/` -- PCA, K-Means, Silhouette
 - `ejercicios/05_nlp_text_mining/` -- Conteo, limpieza, sentimiento, Jaccard
+- `ejercicios/06_análisis_datos_de_panel/` -- Pipeline QoG con Apache Spark

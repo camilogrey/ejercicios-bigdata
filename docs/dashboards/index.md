@@ -16,6 +16,8 @@ Cada pagina incluye analisis, graficos y codigo fuente.
 
 - [ARIMA/SARIMA - Metodologia Box-Jenkins](04_series_temporales_arima.md) -- Identificacion, estimacion, diagnostico y pronostico
 - [Dashboard ARIMA (interactivo)](04_series_temporales_arima.html){target="_blank"} -- 6 pestanas: serie, descomposicion, ACF/PACF, diagnostico, forecast, radar
+- [Dashboard ARIMA PRO](arima-sarima-pro.md) -- Tema financiero tipo Bloomberg, KPIs, 7 pestanas, comparativa de modelos
+- [Dashboard ARIMA PRO (interactivo)](dashboard_arima_pro.html){target="_blank"} -- Diseno inspirado en OECD Explorer y Portfolio Optimizer
 
 ### Computer Vision (Transfer Learning)
 

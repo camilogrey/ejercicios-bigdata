@@ -217,6 +217,7 @@ nav:
       - 'Transfer Learning Flores': dashboards/flores-transfer-learning.md
     - 'Series Temporales':
       - 'ARIMA/SARIMA Box-Jenkins': dashboards/04_series_temporales_arima.md
+      - 'ARIMA PRO (Tema Financiero)': dashboards/arima-sarima-pro.md
     - 'NLP y Text Mining':
       - 'Conteo de Palabras': dashboards/EJERCICIO_01_CONTEO.md
       - 'Filtro de Stopwords': dashboards/EJERCICIO_02_LIMPIEZA.md

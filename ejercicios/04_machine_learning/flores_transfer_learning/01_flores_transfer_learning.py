@@ -330,6 +330,57 @@ def reduce_dimensions(embeddings):
 # =====================================================================
 # PASO 5: VISUALIZACION
 # =====================================================================
+def image_to_base64(img_path, size=(100, 100)):
+    """Convierte imagen a base64 para embeber en HTML."""
+    import base64
+    import io
+    try:
+        img = Image.open(img_path)
+        img.thumbnail(size)
+        buffer = io.BytesIO()
+        img.save(buffer, format="JPEG", quality=75)
+        return base64.b64encode(buffer.getvalue()).decode()
+    except:
+        return None
+
+
+def get_sample_images(df, n_per_class=4):
+    """Obtiene imagenes de muestra por clase."""
+    samples = {}
+    for flower_class in FLOWER_CLASSES:
+        class_df = df[df["class_name"] == flower_class].sample(n=min(n_per_class, len(df[df["class_name"] == flower_class])), random_state=42)
+        samples[flower_class] = []
+        for _, row in class_df.iterrows():
+            b64 = image_to_base64(row["path"])
+            if b64:
+                samples[flower_class].append({"b64": b64, "name": row["filename"]})
+    return samples
+
+
+def build_gallery_html(samples):
+    """Construye HTML de galeria de imagenes."""
+    html = '<div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;padding:1rem;">'
+    for flower_class, images in samples.items():
+        if not images:
+            continue
+        class_name_es = CLASS_NAMES_ES.get(flower_class, flower_class)
+        color = COLORS.get(flower_class, "#888")
+        html += f'''
+        <div style="background:#161b22;border-radius:12px;padding:1rem;border:2px solid {color};min-width:200px;">
+            <h4 style="color:{color};text-align:center;margin-bottom:0.5rem;">{class_name_es}</h4>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
+        '''
+        for img in images:
+            html += f'''
+                <img src="data:image/jpeg;base64,{img["b64"]}"
+                     alt="{img["name"]}" title="{img["name"]}"
+                     style="width:80px;height:80px;object-fit:cover;border-radius:8px;border:1px solid #30363d;">
+            '''
+        html += '</div></div>'
+    html += '</div>'
+    return html
+
+
 def create_dashboard(df, results, embeddings_2d):
     """Genera dashboard HTML con visualizaciones."""
     print("\n[5/5] GENERACION DE DASHBOARD")
@@ -337,12 +388,16 @@ def create_dashboard(df, results, embeddings_2d):
 
     import plotly.express as px
     import plotly.graph_objects as go
-    from plotly.subplots import make_subplots
 
     # Agregar coordenadas t-SNE al dataframe
     df = df.copy()
     df["tsne_x"] = embeddings_2d[:, 0]
     df["tsne_y"] = embeddings_2d[:, 1]
+
+    # 0. Galeria de imagenes
+    print("  Creando galeria de imagenes...")
+    samples = get_sample_images(df, n_per_class=4)
+    gallery_html = build_gallery_html(samples)
 
     # 1. Scatter t-SNE
     print("  Creando visualizacion t-SNE...")
@@ -418,9 +473,9 @@ def create_dashboard(df, results, embeddings_2d):
         body {{ font-family: 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; margin: 0; }}
         .header {{ background: linear-gradient(135deg, #1a472a, #3d7a4d); padding: 2rem; text-align: center; }}
         .header h1 {{ color: #81C784; margin: 0; }}
-        .tabs {{ display: flex; gap: 4px; padding: 1rem; background: #161b22; }}
-        .tab-btn {{ padding: 0.8rem 1.5rem; background: #21262d; color: #8b949e; border: 1px solid #30363d;
-                   cursor: pointer; border-radius: 8px 8px 0 0; }}
+        .tabs {{ display: flex; gap: 4px; padding: 1rem; background: #161b22; flex-wrap: wrap; }}
+        .tab-btn {{ padding: 0.8rem 1.2rem; background: #21262d; color: #8b949e; border: 1px solid #30363d;
+                   cursor: pointer; border-radius: 8px 8px 0 0; font-size: 0.9rem; }}
         .tab-btn:hover {{ background: #30363d; }}
         .tab-btn.active {{ background: #4CAF50; color: white; }}
         .content {{ padding: 1rem 2rem; }}
@@ -435,16 +490,21 @@ def create_dashboard(df, results, embeddings_2d):
         <p>MobileNetV2 + ML Tradicional | TensorFlow + scikit-learn</p>
     </div>
     <div class="tabs">
-        <button class="tab-btn active" onclick="showTab(0)">t-SNE</button>
-        <button class="tab-btn" onclick="showTab(1)">Comparativa</button>
-        <button class="tab-btn" onclick="showTab(2)">Confusion Matrix</button>
-        <button class="tab-btn" onclick="showTab(3)">Distribucion</button>
+        <button class="tab-btn active" onclick="showTab(0)">Galeria</button>
+        <button class="tab-btn" onclick="showTab(1)">t-SNE</button>
+        <button class="tab-btn" onclick="showTab(2)">Comparativa</button>
+        <button class="tab-btn" onclick="showTab(3)">Confusion Matrix</button>
+        <button class="tab-btn" onclick="showTab(4)">Distribucion</button>
     </div>
     <div class="content">
-        <div class="tab-content active" id="tab-0">{fig_tsne.to_html(full_html=False, include_plotlyjs=True)}</div>
-        <div class="tab-content" id="tab-1">{fig_compare.to_html(full_html=False, include_plotlyjs=False)}</div>
-        <div class="tab-content" id="tab-2">{fig_cm.to_html(full_html=False, include_plotlyjs=False)}</div>
-        <div class="tab-content" id="tab-3">{fig_radar.to_html(full_html=False, include_plotlyjs=False)}</div>
+        <div class="tab-content active" id="tab-0">
+            <h3 style="text-align:center;color:#4CAF50;margin:1rem 0;">Muestra del Dataset: Flores Reales</h3>
+            {gallery_html}
+        </div>
+        <div class="tab-content" id="tab-1">{fig_tsne.to_html(full_html=False, include_plotlyjs=True)}</div>
+        <div class="tab-content" id="tab-2">{fig_compare.to_html(full_html=False, include_plotlyjs=False)}</div>
+        <div class="tab-content" id="tab-3">{fig_cm.to_html(full_html=False, include_plotlyjs=False)}</div>
+        <div class="tab-content" id="tab-4">{fig_radar.to_html(full_html=False, include_plotlyjs=False)}</div>
     </div>
     <div class="ref">
         <strong>Curso:</strong> Big Data con Python - De Cero a Produccion<br>

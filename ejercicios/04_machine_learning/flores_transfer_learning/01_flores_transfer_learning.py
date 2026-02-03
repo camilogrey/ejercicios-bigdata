@@ -319,7 +319,7 @@ def reduce_dimensions(embeddings):
 
     # t-SNE (50 -> 2)
     print("  t-SNE: 50 -> 2 dimensiones (puede tardar)...")
-    tsne = TSNE(n_components=2, perplexity=30, random_state=42, n_iter=1000)
+    tsne = TSNE(n_components=2, perplexity=30, random_state=42)
     embeddings_2d = tsne.fit_transform(embeddings_pca)
 
     print("  [OK] Reduccion completada")

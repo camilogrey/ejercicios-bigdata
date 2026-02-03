@@ -17,6 +17,11 @@ Cada pagina incluye analisis, graficos y codigo fuente.
 - [ARIMA/SARIMA - Metodologia Box-Jenkins](04_series_temporales_arima.md) -- Identificacion, estimacion, diagnostico y pronostico
 - [Dashboard ARIMA (interactivo)](04_series_temporales_arima.html){target="_blank"} -- 6 pestanas: serie, descomposicion, ACF/PACF, diagnostico, forecast, radar
 
+### Computer Vision (Transfer Learning)
+
+- [Clasificacion de Flores con Transfer Learning](flores-transfer-learning.md) -- MobileNetV2 + ML tradicional sobre embeddings
+- [Dashboard Flores (interactivo)](dashboard_flores.html){target="_blank"} -- t-SNE, comparativa modelos, confusion matrix, radar
+
 ### Dashboards interactivos (HTML)
 
 - [Dashboard PCA Iris (interactivo)](02_pca_iris_dashboard.html){target="_blank"} -- Visualizacion completa en pantalla

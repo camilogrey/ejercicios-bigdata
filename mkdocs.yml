@@ -214,6 +214,7 @@ nav:
     - 'Machine Learning':
       - 'PCA + K-Means Iris': dashboards/02_pca_iris_clustering.md
       - 'PCA estilo FactoMineR': dashboards/02_PCA_FactoMineR_style.md
+      - 'Transfer Learning Flores': dashboards/flores-transfer-learning.md
     - 'Series Temporales':
       - 'ARIMA/SARIMA Box-Jenkins': dashboards/04_series_temporales_arima.md
     - 'NLP y Text Mining':

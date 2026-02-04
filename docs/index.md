@@ -60,10 +60,8 @@ Este material surge de **230 horas de curso presencial** donde enseno Big Data a
     - :white_check_mark: Puedes practicar **antes, durante y despues** de las clases
     - :white_check_mark: Tienes **soporte directo** en las sesiones presenciales
 
-    !!! danger "ANTES de crear un Pull Request"
-        Si tu PR tiene 30+ commits cuando solo hiciste 5, **sera rechazado**.
-
-        **Lee primero:** [Como crear un PR limpio](git-github/pr-limpio.md#prevencion-flujo-ideal)
+    !!! warning "Guia de Entregas"
+        Antes de entregar, lee la [Guia de PRs](git-github/pr-limpio.md)
 
     !!! success "Ventaja"
         Mientras otros solo tienen diapositivas, tu tienes un repositorio completo con codigo ejecutable.

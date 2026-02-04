@@ -1,307 +1,193 @@
-# Guía General de Entregas
+# Como Entregar tus Ejercicios
 
-Esta guía se aplica a **TODOS** los ejercicios del curso.
-
----
-
-## Estructura de Carpetas por Alumno
-
-Cada alumno debe crear **UNA carpeta personal** dentro de la carpeta de entrega del ejercicio correspondiente.
-
-### Formato del Nombre
-
-```
-apellido_nombre
-```
-
-**Reglas:**
-- Todo en minúsculas
-- Sin tildes ni caracteres especiales
-- Separado por guión bajo `_`
-- Formato: `apellido_nombre` (apellido primero)
-
-**Ejemplos válidos:**
-- `garcia_maria/`
-- `lopez_juan/`
-- `martinez_ana/`
-- `rodriguez_carlos/`
-
-**Ejemplos NO válidos:**
-- ❌ `María García/` (mayúsculas, tildes, espacios)
-- ❌ `maria_garcia/` (nombre primero)
-- ❌ `garcia-maria/` (guión en lugar de guión bajo)
+Esta guia te explica **paso a paso** como subir tu trabajo. No necesitas saber Git, solo sigue las instrucciones.
 
 ---
 
-## Ubicación de las Entregas
+## Resumen Rapido
 
 ```
-entregas/
-├── 1.1_sqlite/                  # Ejercicio 1.1
-│   ├── garcia_maria/            # Carpeta del alumno
-│   │   ├── archivo1.py
-│   │   ├── archivo2.md
-│   │   └── ...
-│   └── lopez_juan/              # Otro alumno
-│       └── ...
-│
-├── 2.1_postgresql_hr/           # Ejercicio 2.1
-│   └── garcia_maria/
-│       └── ...
-│
-└── ...                          # Más ejercicios
+Tu computadora → Tu fork en GitHub → Pull Request al profesor
 ```
+
+Suena complicado, pero son solo **5 pasos** que haras siempre igual.
 
 ---
 
-## Múltiples Archivos por Alumno
+## Paso 1: Crear tu copia del repositorio (solo la primera vez)
 
-### ✅ Permitido
+Esto se llama "hacer un fork". Es como fotocopiar un libro para poder escribir en tu copia.
 
-- Subir **múltiples archivos** dentro de tu carpeta
-- Actualizar archivos (hacer nuevos commits)
-- Agregar archivos adicionales (capturas, PDFs, etc.)
-- Organizar en subcarpetas si lo necesitas
+1. Abre: [https://github.com/TodoEconometria/ejercicios-bigdata](https://github.com/TodoEconometria/ejercicios-bigdata)
+2. Arriba a la derecha, haz clic en el boton **"Fork"**
+3. GitHub te preguntara donde crear la copia. Deja todo como esta y haz clic en **"Create fork"**
+4. Espera unos segundos. Ahora tienes tu propia copia en `github.com/TU_USUARIO/ejercicios-bigdata`
 
-**Ejemplo:**
-```
-entregas/01_bases_de_datos/garcia_maria/
-└── 1.1_sqlite/
-    ├── solucion_modelo_a.py
-    ├── solucion_modelo_b.py
-    ├── ANALISIS_DATOS.md
-    ├── consultas.sql
-    ├── capturas/
-    │   ├── screenshot1.png
-    │   └── screenshot2.png
-    └── notas_personales.txt
-```
-
-### ❌ NO Permitido
-
-- ❌ Subir archivos `.db` (bases de datos binarias)
-- ❌ Subir archivos `.csv` grandes (datos)
-- ❌ Subir archivos temporales (`.pyc`, `__pycache__/`, `.DS_Store`)
-- ❌ Subir carpetas `venv/`, `node_modules/`
+!!! success "Solo haces esto UNA vez"
+    El fork es tuyo para siempre. No lo borres.
 
 ---
 
-## Opciones de Entrega
+## Paso 2: Descargar tu copia a tu computadora (solo la primera vez)
 
-### Opción 1: Archivos Sueltos (Recomendada)
-
-Sube tus archivos directamente en tu carpeta:
+1. En TU fork (no el del profesor), haz clic en el boton verde **"Code"**
+2. Copia la URL que aparece (empieza con `https://github.com/TU_USUARIO/...`)
+3. Abre una terminal (CMD en Windows, Terminal en Mac)
+4. Escribe estos comandos:
 
 ```bash
-git add entregas/X.X_ejercicio/tu_apellido_nombre/
-git commit -m "Entrega X.X - Tu Nombre"
-git push origin tu-rama
-```
-
-### Opción 2: Archivo ZIP
-
-Si prefieres, puedes comprimir todo en un ZIP:
-
-```
-entregas/01_bases_de_datos/garcia_maria.zip
-```
-
-**Nota:** La Opción 1 es preferida porque permite revisión más fácil.
-
----
-
-## Workflow Completo de Entrega
-
-### Paso 1: Fork del Repositorio (Solo la primera vez)
-
-1. Ve a: https://github.com/TodoEconometria/ejercicios-bigdata
-2. Haz clic en **"Fork"** (arriba a la derecha)
-3. Ahora tienes tu copia: `https://github.com/TU_USUARIO/ejercicios-bigdata`
-
-### Paso 2: Clonar TU Fork
-
-```bash
+cd Documentos
 git clone https://github.com/TU_USUARIO/ejercicios-bigdata.git
 cd ejercicios-bigdata
 ```
 
-### Paso 3: Sincronizar con el Repositorio Original
+Cambia `TU_USUARIO` por tu nombre de usuario de GitHub.
 
-**IMPORTANTE:** Antes de cada nueva entrega, sincroniza tu fork.
-
-👉 **[Ver guía completa de sincronización](https://todoeconometria.github.io/ejercicios-bigdata/git-github/sincronizar-fork/)**
-
-```bash
-# Añadir upstream (solo la primera vez)
-git remote add upstream https://github.com/TodoEconometria/ejercicios-bigdata.git
-
-# Sincronizar
-git fetch upstream
-git checkout main
-git merge upstream/main
-git push origin main
-```
-
-### Paso 4: Crear Rama para tu Entrega
-
-```bash
-git checkout -b apellido-ejercicio-X.X
-```
-
-**Ejemplo:**
-```bash
-git checkout -b garcia-ejercicio-1.1
-```
-
-### Paso 5: Crear tu Carpeta de Entrega
-
-```bash
-mkdir -p entregas/X.X_ejercicio/apellido_nombre
-```
-
-**Ejemplo:**
-```bash
-mkdir -p entregas/01_bases_de_datos/garcia_maria/1.1_sqlite
-```
-
-### Paso 6: Completar tus Archivos
-
-Copia plantillas o crea tus archivos desde cero en tu carpeta:
-
-```bash
-# Ver qué archivos necesitas entregar
-cat ejercicios/01_bases_de_datos/X.X_ejercicio/README.md
-```
-
-### Paso 7: Verificar Archivos
-
-```bash
-# Ver tus archivos
-ls -la entregas/X.X_ejercicio/apellido_nombre/
-
-# Ver estado de Git
-git status
-```
-
-### Paso 8: Commit
-
-```bash
-# Agregar archivos
-git add entregas/X.X_ejercicio/apellido_nombre/
-
-# Commit con mensaje descriptivo
-git commit -m "Entrega X.X - Nombre Apellido"
-```
-
-**Ejemplos de mensajes:**
-- `"Entrega 1.1 - María García"`
-- `"Entrega 2.1 PostgreSQL HR - Juan López"`
-
-### Paso 9: Push a TU Fork
-
-```bash
-git push origin apellido-ejercicio-X.X
-```
-
-### Paso 10: Crear Pull Request
-
-!!! danger "Si tu PR tiene 30+ commits"
-    Lee primero: **[Como crear un PR limpio](../git-github/pr-limpio.md)**
-
-1. Ve a TU fork en GitHub
-2. Verás un banner: **"apellido-ejercicio-X.X had recent pushes"**
-3. Haz clic en **"Compare & pull request"**
-4. **Título del PR:** `[X.X] Apellido Nombre - Título del Ejercicio`
-5. Completa el checklist automático
-6. Haz clic en **"Create pull request"**
+!!! info "Ahora tienes la carpeta en tu computadora"
+    Busca en `Documentos/ejercicios-bigdata/`. Ahi trabajaras.
 
 ---
 
-## Validación Automática
+## Paso 3: Crear tu carpeta de entrega
 
-Cuando crees tu PR, un bot automático verificará:
+Dentro de la carpeta del repositorio, busca donde va tu entrega. Por ejemplo:
 
-- ✅ Formato del nombre de carpeta
-- ✅ Archivos obligatorios presentes
-- ✅ Sin archivos prohibidos
-- ⚠️ Si tu fork está desactualizado (>5 commits atrás)
+- Ejercicio 1.1 SQLite → `entregas/01_bases_de_datos/1.1_sqlite/`
+- Ejercicio 2.1 PostgreSQL → `entregas/01_bases_de_datos/2.1_postgresql_hr/`
+- Trabajo Final → `entregas/trabajo_final/`
 
-**Si tu fork está desactualizado:**
-El bot te avisará y agregará una etiqueta. Debes sincronizar antes de continuar.
+**Crea una carpeta con tu nombre** dentro de la carpeta del ejercicio:
 
----
+```
+entregas/01_bases_de_datos/1.1_sqlite/garcia_maria/
+```
 
-## Actualizar tu PR (Correcciones)
+!!! warning "Formato del nombre de carpeta"
+    - Todo en **minusculas**
+    - Sin tildes ni espacios
+    - Formato: `apellido_nombre`
+    - Ejemplo: `garcia_maria`, `lopez_juan`, `martinez_ana`
 
-Si el profesor pide correcciones o quieres actualizar:
+**Pon tus archivos dentro de tu carpeta:**
 
-```bash
-# Edita tus archivos localmente
-
-# Commit de nuevo
-git add entregas/X.X_ejercicio/apellido_nombre/
-git commit -m "Correcciones solicitadas"
-
-# Push (actualiza automáticamente el PR)
-git push origin apellido-ejercicio-X.X
+```
+entregas/01_bases_de_datos/1.1_sqlite/garcia_maria/
+├── mi_solucion.py
+├── consultas.sql
+└── REFLEXION.md
 ```
 
 ---
 
-## Preguntas Frecuentes
+## Paso 4: Subir tu trabajo a GitHub
 
-### ¿Puedo ver las entregas de otros compañeros?
-
-Sí, los PRs son públicos. Pero **NO copies**, el sistema detecta plagios.
-
-### ¿Cuántas veces puedo actualizar mi PR?
-
-Las que necesites antes de la fecha límite. Cada push actualiza el PR automáticamente.
-
-### ¿Qué pasa si me equivoco en el nombre de la carpeta?
-
-El bot de validación te avisará. Puedes renombrar y hacer push de nuevo:
+Abre la terminal en la carpeta del repositorio y ejecuta estos 4 comandos:
 
 ```bash
-git mv entregas/X.X/nombre_incorrecto entregas/X.X/apellido_nombre
-git commit -m "Corregir nombre de carpeta"
-git push origin tu-rama
+git add .
+git commit -m "Entrega 1.1 - Maria Garcia"
+git push
 ```
 
-### No sé usar Git, ¿hay otra forma?
+!!! tip "Que significa cada comando"
+    - `git add .` → Prepara todos tus archivos nuevos
+    - `git commit -m "..."` → Guarda los cambios con un mensaje
+    - `git push` → Sube todo a tu GitHub
 
-Puedes usar **GitHub Desktop** (interfaz gráfica) o pregunta al profesor.
-
-### ¿Puedo organizar mis archivos en subcarpetas?
-
-Sí, siempre que todo esté dentro de `entregas/X.X/apellido_nombre/`.
-
----
-
-## Ayuda y Recursos
-
-**Si tienes problemas:**
-1. Revisa esta guía de nuevo
-2. Consulta la guía específica del ejercicio
-3. Pregunta a tus compañeros
-4. Pregunta al profesor en clase
-
-**Recursos útiles:**
-- [Guía Git y GitHub](https://todoeconometria.github.io/ejercicios-bigdata/git-github/)
-- [Sincronizar Fork](https://todoeconometria.github.io/ejercicios-bigdata/git-github/sincronizar-fork/)
-- [Crear Pull Requests](https://todoeconometria.github.io/ejercicios-bigdata/git-github/pull-requests/)
-- [Tutorial Git en español](https://git-scm.com/book/es/v2)
+Si te pide usuario y contrasena, usa tu cuenta de GitHub.
 
 ---
 
-## Importante
+## Paso 5: Pedir que el profesor revise tu trabajo (Pull Request)
 
-- ⏰ Respeta las fechas límite (cada ejercicio tiene la suya)
-- 🔒 NO subas información personal (contraseñas, tokens)
-- 🚫 NO copies código de compañeros
-- ✅ Sincroniza tu fork ANTES de cada entrega
-- 📝 Lee las instrucciones específicas de cada ejercicio
+Este es el paso final. Le dices al profesor "ya termine, revisame".
+
+1. Ve a tu fork en GitHub: `github.com/TU_USUARIO/ejercicios-bigdata`
+2. Veras un mensaje amarillo que dice algo como "This branch is 1 commit ahead"
+3. Haz clic en **"Contribute"** → **"Open pull request"**
+4. Escribe un titulo claro: `[1.1] Garcia Maria - Ejercicio SQLite`
+5. Haz clic en **"Create pull request"**
+
+!!! success "Listo!"
+    El profesor recibira tu entrega y la revisara.
 
 ---
 
-**Última actualización:** 2026-02-04
+## Para la siguiente entrega
+
+Ya tienes el fork y el repositorio descargado. Solo repite los pasos 3, 4 y 5:
+
+1. Crea tu carpeta en el nuevo ejercicio
+2. Pon tus archivos
+3. Ejecuta `git add .`, `git commit`, `git push`
+4. Crea el Pull Request
+
+---
+
+## Problemas comunes
+
+### "Mi PR tiene 30+ commits que no son mios"
+
+Esto pasa cuando tu fork esta desactualizado. Lee esta guia: [Como crear un PR limpio](../git-github/pr-limpio.md)
+
+### "Git me dice que hay conflictos"
+
+Tu fork esta muy desactualizado. Sigue la [guia de sincronizacion](../git-github/sincronizar-fork.md) o pide ayuda al profesor.
+
+### "No se usar la terminal"
+
+Puedes usar **GitHub Desktop** (programa con interfaz grafica). Descargalo de [desktop.github.com](https://desktop.github.com/).
+
+### "Me equivoque en el nombre de la carpeta"
+
+Renombrala y vuelve a hacer los comandos del Paso 4.
+
+---
+
+## Que NO debes subir
+
+- Archivos de base de datos (`.db`, `.sqlite`)
+- Archivos de datos grandes (`.csv` de mas de 1MB)
+- Carpetas del sistema (`__pycache__/`, `venv/`, `.venv/`)
+- Archivos con contrasenas o tokens
+
+---
+
+## Resumen visual
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    FLUJO DE ENTREGA                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. Fork (una vez)                                          │
+│     └── Creas tu copia en GitHub                            │
+│                                                             │
+│  2. Clone (una vez)                                         │
+│     └── Descargas la copia a tu PC                          │
+│                                                             │
+│  3. Trabajas en tu carpeta                                  │
+│     └── entregas/.../tu_apellido_nombre/                    │
+│                                                             │
+│  4. Subes cambios                                           │
+│     └── git add . → git commit → git push                   │
+│                                                             │
+│  5. Pull Request                                            │
+│     └── Le dices al profesor "revisame"                     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Ayuda
+
+Si tienes dudas:
+
+1. Revisa esta guia de nuevo
+2. Pregunta a un companero
+3. Pregunta al profesor en clase
+
+---
+
+**Ultima actualizacion:** 2026-02-04

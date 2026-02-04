@@ -205,6 +205,9 @@ git push origin apellido-ejercicio-X.X
 
 ### Paso 10: Crear Pull Request
 
+!!! danger "Si tu PR tiene 30+ commits"
+    Lee primero: **[Como crear un PR limpio](../git-github/pr-limpio.md)**
+
 1. Ve a TU fork en GitHub
 2. Verás un banner: **"apellido-ejercicio-X.X had recent pushes"**
 3. Haz clic en **"Compare & pull request"**
@@ -301,4 +304,4 @@ Sí, siempre que todo esté dentro de `entregas/X.X/apellido_nombre/`.
 
 ---
 
-**Última actualización:** 2025-12-17
+**Última actualización:** 2026-02-04

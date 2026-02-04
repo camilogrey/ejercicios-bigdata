@@ -61,7 +61,7 @@ Este material surge de **230 horas de curso presencial** donde enseno Big Data a
     - :white_check_mark: Tienes **soporte directo** en las sesiones presenciales
 
     !!! warning "Guia de Entregas"
-        Antes de entregar, lee la [Guia de PRs](git-github/pr-limpio.md)
+        Antes de entregar, lee la [Guia de Entregas](entregas/guia-entregas.md)
 
     !!! success "Ventaja"
         Mientras otros solo tienen diapositivas, tu tienes un repositorio completo con codigo ejecutable.

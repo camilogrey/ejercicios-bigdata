@@ -29,7 +29,7 @@
 
 ## El Curso en Números
 
-| 230 Horas | 6 Módulos | 25+ Ejercicios | 12+ Dashboards | 30+ Tecnologías |
+| 230 Horas | 9 Módulos | 25+ Ejercicios | 12+ Dashboards | 30+ Tecnologías |
 |:---------:|:---------:|:--------------:|:--------------:|:---------------:|
 | de contenido | completos | prácticos | interactivos | profesionales |
 
@@ -100,25 +100,45 @@
 
 Desde tu primera query SELECT hasta procedimientos almacenados en Oracle.
 
-### Módulo 2: Big Data y ETL
-> Pipelines ETL, Dask, Parquet, QoG Dataset
+### Módulo 2: Limpieza de Datos y ETL
+> Pipeline ETL profesional, QoG Dataset (1289 variables, 194+ países)
 
 Pipelines profesionales que procesan millones de registros.
 
-### Módulo 3: Analítica Avanzada
-> Machine Learning, Deep Learning, NLP, Series Temporales
+### Módulo 3: Procesamiento Distribuido
+> Dask, Parquet, LocalCluster
 
-PCA, K-Means, Transfer Learning con TensorFlow, ARIMA/SARIMA.
+Procesamiento paralelo de datasets grandes en una sola máquina.
 
-### Módulo 4: Econometría de Panel
+### Módulo 4: Machine Learning
+> PCA, K-Means, Transfer Learning, ARIMA/SARIMA
+
+Desde clustering hasta Computer Vision con TensorFlow y series temporales.
+
+### Módulo 5: NLP y Text Mining
+> NLTK, TF-IDF, Jaccard, Análisis de Sentimiento
+
+Tokenización, limpieza, similitud de documentos y análisis de sentimiento.
+
+### Módulo 6: Análisis de Datos de Panel
 > Efectos Fijos, Efectos Aleatorios, Hausman Test
 
 Análisis longitudinal con datos país x año.
 
-### Módulo 5: Streaming e Infraestructura Cloud
-> Kafka, Spark Streaming, LocalStack, Terraform, AWS
+### Módulo 7: Infraestructura Big Data
+> Docker, Docker Compose, Apache Spark Cluster
 
-Streaming en tiempo real y simulación de AWS sin costos.
+Contenedores, orquestación y clusters Spark en Docker.
+
+### Módulo 8: Streaming con Kafka
+> Apache Kafka (KRaft), Spark Structured Streaming
+
+Streaming en tiempo real con datos de sismos desde USGS API.
+
+### Módulo 9: Cloud con LocalStack
+> LocalStack, Terraform, AWS S3/Lambda/DynamoDB
+
+Simulación de AWS sin costos e Infraestructura como Código.
 
 ### Trabajo Final
 > Docker + Spark + PostgreSQL + Análisis Completo
@@ -157,7 +177,10 @@ ejercicios-bigdata/
 │   ├── 03_procesamiento_distribuido/
 │   ├── 04_machine_learning/
 │   ├── 05_nlp_text_mining/
-│   └── 06_análisis_datos_de_panel/
+│   ├── 06_analisis_datos_de_panel/
+│   ├── 07_infraestructura_bigdata/
+│   ├── 08_streaming_kafka/
+│   └── 09_cloud_localstack/
 │
 ├── entregas/                   # Zona de entregas del alumno
 ├── trabajo_final/              # Proyecto integrador

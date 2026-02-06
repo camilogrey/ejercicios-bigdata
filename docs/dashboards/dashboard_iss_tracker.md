@@ -20,7 +20,7 @@ en tiempo real, ver su trayectoria orbital, y predecir cuando pasara sobre tu ub
 ## Ver Dashboard
 
 <div style="text-align: center; margin: 30px 0;">
-    <a href="dashboard_iss_tracker.html" target="_blank"
+    <a href="../dashboard_iss_tracker.html" target="_blank"
        style="background: linear-gradient(135deg, #00f2fe, #4facfe);
               color: white; padding: 15px 40px; border-radius: 30px;
               text-decoration: none; font-size: 1.2em; font-weight: bold;">

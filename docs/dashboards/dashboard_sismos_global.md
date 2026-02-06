@@ -20,7 +20,7 @@ del **USGS Earthquake Hazards Program** (Servicio Geologico de Estados Unidos).
 ## Ver Dashboard
 
 <div style="text-align: center; margin: 30px 0;">
-    <a href="dashboard_sismos_global.html" target="_blank"
+    <a href="../dashboard_sismos_global.html" target="_blank"
        style="background: linear-gradient(135deg, #667eea, #764ba2);
               color: white; padding: 15px 40px; border-radius: 30px;
               text-decoration: none; font-size: 1.2em; font-weight: bold;">

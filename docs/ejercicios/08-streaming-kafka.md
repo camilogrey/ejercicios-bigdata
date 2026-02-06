@@ -6,6 +6,10 @@ El **streaming de datos** es el procesamiento continuo de datos en tiempo real, 
 
 **Apache Kafka** es una plataforma distribuida de streaming que permite publicar, almacenar y procesar flujos de datos en tiempo real. Desarrollado originalmente por LinkedIn y donado a Apache, Kafka se ha convertido en el estandar de facto para arquitecturas de datos en streaming.
 
+### Formatos de Datos para Ingesta
+
+![Anatomia del Dato: JSON vs XML](../assets/slides/m2_flujo_p03.jpg)
+
 ---
 
 ## Arquitectura de Kafka

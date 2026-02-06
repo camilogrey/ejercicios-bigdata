@@ -4,11 +4,19 @@
 
 ---
 
-## Descripción General
+## Descripcion General
 
-Construirás un **pipeline ETL profesional** trabajando con el dataset Quality of Government, una base de datos longitudinal con más de 1000 variables sobre calidad institucional, democracia y desarrollo económico.
+Construiras un **pipeline ETL profesional** trabajando con el dataset Quality of Government, una base de datos longitudinal con mas de 1000 variables sobre calidad institucional, democracia y desarrollo economico.
 
-**Objetivo:** Aplicar técnicas de ingeniería de software y ciencia de datos para limpiar, transformar y analizar datos reales de investigación académica.
+**Objetivo:** Aplicar tecnicas de ingenieria de software y ciencia de datos para limpiar, transformar y analizar datos reales de investigacion academica.
+
+![Flujo de Datos y Ciclo de Vida en Bases de Datos Distribuidas](../assets/slides/m2_flujo_p01.jpg)
+
+---
+
+## El Ciclo de Vida del Dato
+
+![Gestion desde la Creacion hasta la Eliminacion](../assets/slides/m2_flujo_p02.jpg)
 
 ---
 
@@ -107,11 +115,29 @@ tu_apellido_nombre/
 
 ---
 
+## Arquitectura de Ingesta
+
+![Modelos de Transferencia: Batch, Streaming y Delta Load](../assets/slides/m2_flujo_p04.jpg)
+
+![Metodos Avanzados de Obtencion de Datos](../assets/slides/m2_flujo_p05.jpg)
+
+---
+
+## Limpieza de Datos: Enfoque Practico
+
+![Limpieza y Analisis de Datos para Big Data](../assets/slides/m2_limpieza_p01.jpg)
+
+![Caso de Estudio: Dataset Linelist](../assets/slides/m2_limpieza_p03.jpg)
+
+![Inspeccion Tecnica: Radiografia del Dataframe](../assets/slides/m2_limpieza_p05.jpg)
+
+---
+
 ## Fases del Proyecto
 
 ### 1. Extract (E)
 - Descargar dataset QoG
-- Filtrar por tema y período
+- Filtrar por tema y periodo
 - Validar integridad
 
 ### 2. Transform (T)

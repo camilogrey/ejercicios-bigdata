@@ -10,6 +10,8 @@ Entender **como se construye** la infraestructura que soporta el procesamiento d
 
 Este modulo sienta las bases para el **Trabajo Final**, donde cada alumno construye su propia infraestructura Docker + Spark desde cero.
 
+![Infraestructura para Big Data: Contenedores y Orquestacion](../assets/slides/m7_infra_p01.jpg)
+
 ---
 
 ## Estructura del Modulo
@@ -25,6 +27,22 @@ Este modulo sienta las bases para el **Trabajo Final**, donde cada alumno constr
 ---
 
 ## 7.1 Docker Compose: Contenedores y Orquestacion
+
+### El Problema: Dependency Hell
+
+![El Problema: Dependency Hell y la Fragilidad del Entorno](../assets/slides/m7_infra_p02.jpg)
+
+### Contenedores vs Maquinas Virtuales
+
+![Contenedores vs Maquinas Virtuales](../assets/slides/m7_infra_p03.jpg)
+
+### Imagenes vs Contenedores
+
+![El Plano de Construccion: Imagenes vs Contenedores](../assets/slides/m7_infra_p04.jpg)
+
+### Orquestacion con Docker Compose
+
+![Orquestacion: El Director de la Orquesta de Datos](../assets/slides/m7_infra_p05.jpg)
 
 ### Que aprenderas
 

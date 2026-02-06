@@ -2,10 +2,16 @@
 
 En este módulo aprenderás a escalar tu capacidad de cómputo más allá de la memoria RAM de tu máquina, utilizando clusters locales.
 
+![Ecosistemas de Datos Distribuidos](../assets/slides/m1_ecosistemas_p01.jpg)
+
 ## Objetivos
 1. Configurar un Cluster Local con Dask.
 2. Leer archivos Parquet de forma particionada.
 3. Ejecutar agregaciones complejas (GroupBy) en paralelo.
+
+### Hadoop: La Democratizacion del Procesamiento
+
+![Hadoop Framework: MapReduce, HDFS, Avro, Parquet](../assets/slides/m1_ecosistemas_p02.jpg)
 
 ## Instrucciones
 

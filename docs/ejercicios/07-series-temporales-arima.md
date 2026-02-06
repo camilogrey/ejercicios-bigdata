@@ -56,6 +56,34 @@ ejercicios/04_machine_learning/07_series_temporales_arima/
 
 ## Teoria: Metodologia Box-Jenkins
 
+### Anatomia de la Senal: El Proceso Generador de Datos
+
+![Anatomia de la Senal: El Proceso Generador de Datos](../assets/slides/m4_arima_bj_p02.jpg)
+
+### Estacionariedad y Ruido Blanco
+
+![El Objetivo Matematico: Estacionariedad y Ruido Blanco](../assets/slides/m4_arima_bj_p03.jpg)
+
+### Descomposicion de la Serie
+
+![Anatomia de una Senal: Descomponiendo la Serie](../assets/slides/m4_arima_ts_p02.jpg)
+
+### Transformacion y Diferenciacion
+
+![Preparando el Terreno: Transformacion y Diferenciacion](../assets/slides/m4_arima_ts_p04.jpg)
+
+### El Decodificador Clasico: ARIMA
+
+![La Metodologia Box-Jenkins (ARIMA)](../assets/slides/m4_arima_bj_p04.jpg)
+
+### Desestacionalizacion y SARIMA
+
+![Capturando el Ritmo: Desestacionalizacion y SARIMA](../assets/slides/m4_arima_bj_p05.jpg)
+
+### El Flujo de Trabajo Box-Jenkins
+
+![La Metodologia Box-Jenkins: El Flujo de Trabajo](../assets/slides/m4_arima_ts_p05.jpg)
+
 ### Fase 1: Identificacion
 
 - Visualizar la serie y detectar tendencia/estacionalidad

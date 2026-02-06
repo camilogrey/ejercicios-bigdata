@@ -417,6 +417,24 @@ Responde en tu `ANALISIS.md`:
 
 ---
 
+## El Panorama Completo: Ecosistemas de Datos
+
+SQLite es solo el primer paso. En el curso exploraras ecosistemas completos de bases de datos:
+
+### SQL vs NoSQL
+
+![El Cisma de los Datos: Relacional vs NoSQL](../assets/slides/m1_ecosistemas_p03.jpg)
+
+### Modelos Clave-Valor y Columnar
+
+![Velocidad y Escala: Redis, DynamoDB, Cassandra](../assets/slides/m1_ecosistemas_p04.jpg)
+
+### El Ecosistema MongoDB
+
+![Flexibilidad Documental: MongoDB Atlas](../assets/slides/m1_ecosistemas_p05.jpg)
+
+---
+
 ## Proximos Pasos
 
 Una vez completado este ejercicio:

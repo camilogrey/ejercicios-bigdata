@@ -104,6 +104,8 @@ panel serve ejercicios/06_analisis_datos_de_panel/03_dashboard_educativo.py
 
 Datos que combinan **corte transversal** (N unidades) con **serie temporal** (T periodos):
 
+![Estructura de los Datos de Panel](../assets/slides/m6_panel_p02.jpg)
+
 ```
 | pais | anio | democracia | pib_pc |
 |------|------|------------|--------|
@@ -113,6 +115,10 @@ Datos que combinan **corte transversal** (N unidades) con **serie temporal** (T 
 | FRA  | 2001 | 0.89       | 28500  |
 ```
 
+### Ingenieria de Datos: Formato Wide vs Long
+
+![Ingenieria de Datos en Python: Wide vs Long](../assets/slides/m6_panel_p04.jpg)
+
 ### Pooled OLS vs Fixed Effects vs Random Effects
 
 | Modelo | Supuesto | Cuando usarlo |
@@ -120,6 +126,14 @@ Datos que combinan **corte transversal** (N unidades) con **serie temporal** (T 
 | **Pooled OLS** | No hay heterogeneidad individual | Rara vez apropiado |
 | **Fixed Effects** | Heterogeneidad correlacionada con X | Ciencias sociales (regla general) |
 | **Random Effects** | Heterogeneidad NO correlacionada con X | Encuestas aleatorias |
+
+### El Modelo Ingenuo: Pooled OLS
+
+![El Modelo Ingenuo: Pooled OLS](../assets/slides/m6_panel_p05.jpg)
+
+### Heterogeneidad no Observada
+
+![El Enemigo Invisible: Heterogeneidad no Observada](../assets/slides/m6_panel_p03.jpg)
 
 ### Test de Hausman
 

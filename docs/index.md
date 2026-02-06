@@ -1,9 +1,9 @@
-# Big Data con Python - De Cero a Produccion
+# CURSO COMPLETO DE BIG DATA
 
-<div style="text-align: center; padding: 20px 0;">
-<p style="font-size: 1.4em; color: #888;">
-<strong>El curso mas completo de Big Data en espanol</strong><br>
-Desde tu primera query SQL hasta dashboards en tiempo real con Kafka y AWS
+<div style="text-align: center; padding: 30px 0;">
+<img src="assets/todoeconometria_logo.png" alt="TodoEconometria" style="width: 350px; max-width: 80%;">
+<p style="font-size: 1.3em; font-style: italic; color: #888; margin-top: 15px;">
+"Sin experiencia no hay conocimiento"
 </p>
 </div>
 

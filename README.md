@@ -2,10 +2,11 @@
 
 <div align="center">
 
-<img src="docs/assets/todoeconometria_logo.png" alt="TodoEconometria" width="200">
+<img src="docs/assets/todoeconometria_logo.png" alt="TodoEconometria" width="350">
 
-**El curso más completo de Big Data en español**
-*Desde tu primera query SQL hasta dashboards en tiempo real con Kafka y AWS*
+*"Sin experiencia no hay conocimiento"*
+
+## CURSO COMPLETO DE BIG DATA
 
 [![GitHub Stars](https://img.shields.io/github/stars/TodoEconometria/ejercicios-bigdata?style=for-the-badge&logo=github)](https://github.com/TodoEconometria/ejercicios-bigdata/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/TodoEconometria/ejercicios-bigdata?style=for-the-badge&logo=github)](https://github.com/TodoEconometria/ejercicios-bigdata/network/members)

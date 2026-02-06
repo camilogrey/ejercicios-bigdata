@@ -254,8 +254,6 @@ Documenta tus prompts de IA mientras trabajas:
 **Prompt exacto:**
 > como cargo un csv grande a sqlite usando python con chunks
 
-**Captura:** Ver `capturas/prompt_A.png`
-
 ---
 
 ## Prompt B: Optimizar queries

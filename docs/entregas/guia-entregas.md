@@ -121,10 +121,6 @@ entregas/trabajo_final/garcia_maria/
 ├── PROMPTS.md          ← OBLIGATORIO - Tus prompts de IA
 ├── docker-compose.yml  ← Tu infraestructura
 ├── pipeline.py         ← Tu codigo
-├── capturas/           ← Capturas de pantalla
-│   ├── prompt_A.png
-│   ├── prompt_B.png
-│   └── prompt_C.png
 └── ... otros archivos
 ```
 
@@ -133,7 +129,6 @@ entregas/trabajo_final/garcia_maria/
 | Seccion | Que poner |
 |---------|-----------|
 | **Prompt A, B, C** | Tus prompts REALES copiados tal cual (con errores y todo) |
-| **Capturas** | Screenshot de cada prompt en tu IA |
 | **Blueprint** | Al final, pedirle a la IA un resumen profesional |
 
 !!! danger "MUY IMPORTANTE"
@@ -219,12 +214,6 @@ entregas/trabajo_final/apellido_nombre/
 ├── pipeline.py             ← Tu codigo ETL + analisis
 ├── requirements.txt        ← Dependencias
 │
-├── capturas/               ← Capturas obligatorias
-│   ├── prompt_A.png        ← Captura del prompt A
-│   ├── prompt_B.png        ← Captura del prompt B
-│   ├── prompt_C.png        ← Captura del prompt C
-│   └── spark_ui.png        ← Captura de Spark funcionando
-│
 └── .gitignore              ← Excluir datos grandes
 ```
 
@@ -246,7 +235,7 @@ El `.gitignore` ya protege esto, pero recuerda:
 
 !!! danger "LO MAS IMPORTANTE: PROMPTS.md"
     **El archivo PROMPTS.md es lo que se evalua.** No el codigo, no el YAML,
-    sino TUS PROMPTS de IA documentados con capturas de pantalla.
+    sino TUS PROMPTS de IA documentados.
 
 El sistema automatico revisa:
 
@@ -255,7 +244,7 @@ El sistema automatico revisa:
 2. Para cada fork:
    - Verifica que existe PROMPTS.md (OBLIGATORIO)
    - Analiza calidad y autenticidad de los prompts
-   - Verifica que hay capturas de pantalla (prompt_A.png, etc.)
+   - Detecta si los prompts fueron "limpiados" por IA
    - Revisa coherencia entre prompts y codigo entregado
    - Calcula nota automatica basada en proceso de aprendizaje
 3. Genera reporte con:

@@ -91,8 +91,6 @@ Tu archivo `PROMPTS.md` debe contener:
 **Prompt exacto (copiado tal cual):**
 > [Pega aqui tu prompt REAL, con errores y todo]
 
-**Captura:** Ver `capturas/prompt_A.png`
-
 ---
 
 ## Prompt B: [Titulo descriptivo]
@@ -169,7 +167,6 @@ Antes de hacer push, verifica:
 
 - [ ] Mi carpeta esta en `dashboards/mi-nombre-dashboard/`
 - [ ] Incluyo `PROMPTS.md` con mis prompts reales
-- [ ] Incluyo capturas de pantalla de mis prompts
 - [ ] Incluyo `app.py` funcional
 - [ ] Incluyo `README.md` documentando mi trabajo
 - [ ] Mi dashboard tiene al menos 3 visualizaciones

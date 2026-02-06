@@ -46,7 +46,7 @@ documentar como las usaste y que aprendiste.
 2. Escribe tu `docker-compose.yml` con los 3 servicios minimos
 3. Agrega `healthcheck` al menos para PostgreSQL
 4. Ejecuta `docker compose up -d` y verifica que todo arranca
-5. Abre el Spark UI en tu navegador y toma una **captura de pantalla** mostrando el worker conectado
+5. Abre el Spark UI en tu navegador y verifica que el worker esta conectado
 6. Escribe `INFRAESTRUCTURA.md` explicando **cada seccion** de tu YAML con tus palabras
 
 **Pistas:**
@@ -136,8 +136,6 @@ Para **cada bloque** (A, B, C), responde estas 3 preguntas:
 **Ademas, para cada bloque:** Pega el **texto exacto** del prompt de IA que
 mas te ayudo. No lo resumas ni lo parafrasees: copia y pega el texto tal cual.
 
-**Ademas:** Adjunta 1 captura de pantalla del prompt que mas te ayudo
-(o del recurso web/video si no usaste IA). Guardala en `capturas/`.
 
 **IMPORTANTE - Donde van los prompts:**
 
@@ -183,18 +181,13 @@ Responde en `05_RESPUESTAS.md`:
 entregas/trabajo_final/apellido_nombre/
     PROMPTS.md                 <- LO MAS IMPORTANTE (tus prompts de IA)
     01_README.md               <- (1) Tus datos + pregunta de investigacion
-    02_INFRAESTRUCTURA.md      <- (2) Explicacion YAML + captura Spark UI
+    02_INFRAESTRUCTURA.md      <- (2) Explicacion YAML
     03_RESULTADOS.md           <- (3) Graficos + interpretacion
     04_REFLEXION_IA.md         <- (4) 3 Momentos Clave x 3 bloques
     05_RESPUESTAS.md           <- (5) 4 preguntas de comprension
     docker-compose.yml         <- Tu YAML funcional
     pipeline.py                <- ETL + Analisis
     requirements.txt           <- Dependencias (pip freeze)
-    capturas/                  <- Capturas OBLIGATORIAS:
-        prompt_A.png           <- Captura de tu prompt A
-        prompt_B.png           <- Captura de tu prompt B
-        prompt_C.png           <- Captura de tu prompt C
-        spark_ui.png           <- Captura de Spark funcionando
     .gitignore                 <- Excluir datos, venv, __pycache__
 ```
 
@@ -204,8 +197,7 @@ Copia la plantilla desde `trabajo_final/plantilla/` a tu carpeta de entrega.
 
 1. Sincroniza tu fork: `git fetch upstream && git merge upstream/main`
 2. Copia la plantilla: `cp -r trabajo_final/plantilla/ entregas/trabajo_final/apellido_nombre/`
-3. Crea la carpeta de capturas: `mkdir entregas/trabajo_final/apellido_nombre/capturas/`
-4. **Completa PROMPTS.md** mientras trabajas (documenta tus prompts de IA)
+3. **Completa PROMPTS.md** mientras trabajas (documenta tus prompts de IA)
 5. Completa los demas archivos (01 al 05) + `docker-compose.yml` + `pipeline.py`
 6. Sube a tu fork: `git add . && git commit -m "Trabajo Final" && git push`
 7. **Listo!** El profesor revisa tu fork automaticamente (no necesitas crear PR)

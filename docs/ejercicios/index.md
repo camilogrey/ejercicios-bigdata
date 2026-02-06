@@ -39,6 +39,13 @@ Lista completa de todos los ejercicios disponibles en el curso.
 |---|-----------|------------|-------|--------|
 | 06 | [Analisis de Datos de Panel](08-panel-data.md) | linearmodels, Panel OLS, Altair | Avanzado | Disponible |
 
+### Modulo 5: Streaming e Infraestructura Cloud
+
+| # | Ejercicio | Tecnologia | Nivel | Estado |
+|---|-----------|------------|-------|--------|
+| 08 | [Streaming con Kafka](08-streaming-kafka.md) | Apache Kafka, Spark Streaming | Avanzado | Disponible |
+| 09 | [Cloud con LocalStack](09-cloud-localstack.md) | LocalStack, Terraform, AWS | Avanzado | Disponible |
+
 ### Trabajo Final
 
 | # | Ejercicio | Tecnologia | Nivel | Estado |
@@ -284,6 +291,46 @@ Lista completa de todos los ejercicios disponibles en el curso.
 - Odds Ratios y Efectos Marginales
 
 [Ver Ejercicio Completo](08-panel-data.md){ .md-button }
+
+---
+
+## MODULO 5: Streaming e Infraestructura Cloud
+
+### [Streaming con Apache Kafka](08-streaming-kafka.md)
+
+!!! info "Detalles"
+    - **Nivel:** Avanzado
+    - **Tecnologias:** Apache Kafka (KRaft), Python, Spark Streaming
+    - **API:** USGS Earthquakes (tiempo real)
+
+**Que aprenderas:**
+
+- Arquitectura de Kafka: Brokers, Topics, Partitions
+- Modo KRaft (sin ZooKeeper)
+- Productores y Consumidores en Python
+- Spark Structured Streaming
+- Sistema de alertas en tiempo real
+
+[Ver Ejercicio Completo](08-streaming-kafka.md){ .md-button }
+
+---
+
+### [Cloud con LocalStack y Terraform](09-cloud-localstack.md)
+
+!!! info "Detalles"
+    - **Nivel:** Avanzado
+    - **Tecnologias:** LocalStack, Terraform, AWS (S3, Lambda, DynamoDB)
+    - **API:** ISS Tracker (tiempo real)
+
+**Que aprenderas:**
+
+- Cloud Computing: IaaS, PaaS, SaaS
+- Simular AWS localmente con LocalStack
+- Infraestructura como Codigo con Terraform
+- Funciones Lambda serverless
+- Arquitectura Data Lake (Medallion)
+
+[Ver Ejercicio Completo](09-cloud-localstack.md){ .md-button }
 
 ---
 

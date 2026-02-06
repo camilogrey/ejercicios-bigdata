@@ -116,8 +116,7 @@ Para **cada bloque** (A, B, C), responde:
 | **Error** | Que fallo y como lo resolviste? |
 | **Aprendizaje** | Que aprendiste que NO sabias antes? |
 
-Ademas, pega el **texto exacto** del prompt de IA que mas te ayudo en cada bloque
-y adjunta 1 captura de pantalla del prompt mas util.
+Ademas, pega el **texto exacto** del prompt de IA que mas te ayudo en cada bloque.
 
 **Se evalua:**
 
@@ -147,14 +146,13 @@ Responde en `05_RESPUESTAS.md`:
 entregas/trabajo_final/apellido_nombre/
     PROMPTS.md                 <- LO MAS IMPORTANTE (tus prompts de IA)
     01_README.md               <- Tus datos + pregunta de investigacion
-    02_INFRAESTRUCTURA.md      <- Explicacion YAML + captura Spark UI
+    02_INFRAESTRUCTURA.md      <- Explicacion YAML
     03_RESULTADOS.md           <- Graficos + interpretacion
     04_REFLEXION_IA.md         <- 3 Momentos Clave x 3 bloques
     05_RESPUESTAS.md           <- 4 preguntas de comprension
     docker-compose.yml         <- Tu YAML funcional
     pipeline.py                <- ETL + Analisis
     requirements.txt           <- Dependencias (pip freeze)
-    capturas/                  <- Capturas obligatorias (prompt_A.png, prompt_B.png, prompt_C.png)
     .gitignore                 <- Excluir datos, venv, __pycache__
 ```
 

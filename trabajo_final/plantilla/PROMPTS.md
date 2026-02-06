@@ -46,10 +46,6 @@ Este archivo tiene **DOS PARTES** muy diferentes:
 
 **Que paso:** [ ] Funciono  [ ] Funciono parcial  [ ] No funciono
 
-**Captura de pantalla:** `capturas/prompt_A.png`
-
-![Prompt A](capturas/prompt_A.png)
-
 **Que aprendi:** [1-2 oraciones con tus palabras]
 
 ---
@@ -65,10 +61,6 @@ Este archivo tiene **DOS PARTES** muy diferentes:
 
 **Que paso:** [ ] Funciono  [ ] Funciono parcial  [ ] No funciono
 
-**Captura de pantalla:** `capturas/prompt_B.png`
-
-![Prompt B](capturas/prompt_B.png)
-
 **Que aprendi:** [1-2 oraciones]
 
 ---
@@ -83,10 +75,6 @@ Este archivo tiene **DOS PARTES** muy diferentes:
 ```
 
 **Que paso:** [ ] Funciono  [ ] Funciono parcial  [ ] No funciono
-
-**Captura de pantalla:** `capturas/prompt_C.png`
-
-![Prompt C](capturas/prompt_C.png)
 
 **Que aprendi:** [1-2 oraciones]
 

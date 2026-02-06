@@ -207,6 +207,9 @@ nav:
       - 'NLP y Text Mining': ejercicios/05-nlp-mining.md
     - 'Modulo 4: Econometria de Panel':
       - 'Analisis de Datos de Panel': ejercicios/08-panel-data.md
+    - 'Modulo 5: Streaming e Infraestructura Cloud':
+      - 'Streaming con Kafka': ejercicios/08-streaming-kafka.md
+      - 'Cloud con LocalStack': ejercicios/09-cloud-localstack.md
     - 'Trabajo Final':
       - 'Enunciado y Plantilla': ejercicios/06-trabajo-final-capstone.md
 
@@ -226,9 +229,13 @@ nav:
       - 'Vectorizacion y Clustering': dashboards/05_vectorizacion_y_clustering.md
     - 'Datos de Panel (Big Data)':
       - 'QoG - Spark + PostgreSQL + ML': dashboards/06_analisis_panel_qog.md
+    - 'Streaming y Cloud':
+      - 'Observatorio Sismico Global': dashboards/dashboard_sismos_global.md
+      - 'ISS Tracker': dashboards/dashboard_iss_tracker.md
 
   - Entregas:
     - Guia General: entregas/guia-entregas.md
+    - Streaming y Cloud: entregas/streaming-cloud.md
     - FAQ: faq.md
 
 copyright: >

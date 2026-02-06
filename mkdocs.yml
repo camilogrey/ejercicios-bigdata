@@ -169,6 +169,21 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/juangutierrezconsultor/
       name: LinkedIn
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UC2ok03ltDHcVo1PZ1C8mGeg
+      name: YouTube
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/todoeconometria
+      name: Twitter / X
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/DataScienceTodoEconometria
+      name: Facebook
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/todoeconometria/
+      name: Instagram
+    - icon: fontawesome/brands/pinterest
+      link: https://www.pinterest.es/todoeconometria/
+      name: Pinterest
     - icon: fontawesome/solid/globe
       link: https://www.todoeconometria.com
       name: Web TodoEconometria

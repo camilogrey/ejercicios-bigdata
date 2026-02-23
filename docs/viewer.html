@@ -31,7 +31,7 @@
 <body>
 <div id="loading"><div class="spinner"></div><div>Cargando dashboard...</div></div>
 <div id="error"><div style="font-size:1.5rem">&#10007; Error al cargar</div><div id="errMsg"></div></div>
-<iframe id="frame" sandbox="allow-scripts allow-same-origin allow-popups" hidden></iframe>
+<iframe id="frame" hidden></iframe>
 <script>
 (function() {
   var ALLOWED = 'raw.githubusercontent.com';
@@ -48,12 +48,34 @@
     return showError('URL no valida');
   }
 
+  // Calcular base URL para rutas relativas del dashboard
+  // raw: https://raw.githubusercontent.com/USER/REPO/BRANCH/path/to/file.html
+  // cdn: https://cdn.jsdelivr.net/gh/USER/REPO@BRANCH/path/to/
+  // (jsdelivr sirve imagenes/JS con MIME correcto, solo HTML es text/plain)
+  var segments = url.replace('https://raw.githubusercontent.com/', '').split('/');
+  var user = segments[0];
+  var repo = segments[1];
+  var branch = segments[2];
+  var filePath = segments.slice(3).join('/');
+  var dirPath = filePath.substring(0, filePath.lastIndexOf('/') + 1);
+  var cdnBase = 'https://cdn.jsdelivr.net/gh/' + user + '/' + repo + '@' + branch + '/' + dirPath;
+
   fetch(url)
     .then(function(r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.text();
     })
     .then(function(html) {
+      // Inyectar <base> para que rutas relativas (imagenes, JS) resuelvan via jsdelivr
+      var baseTag = '<base href="' + cdnBase + '">';
+      if (/<head[^>]*>/i.test(html)) {
+        html = html.replace(/<head[^>]*>/i, '$&' + baseTag);
+      } else if (/<html[^>]*>/i.test(html)) {
+        html = html.replace(/<html[^>]*>/i, '$&<head>' + baseTag + '</head>');
+      } else {
+        html = baseTag + html;
+      }
+
       document.getElementById('loading').style.display = 'none';
       var frame = document.getElementById('frame');
       frame.hidden = false;

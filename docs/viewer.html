@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Viewer</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #1a1a2e; }
+  iframe { width: 100%; height: 100%; border: none; }
+  #loading {
+    position: fixed; inset: 0; display: flex; align-items: center;
+    justify-content: center; flex-direction: column; gap: 16px;
+    color: #e0e0e0; font-family: system-ui, sans-serif; background: #1a1a2e;
+  }
+  .spinner {
+    width: 48px; height: 48px; border: 4px solid #333;
+    border-top-color: #00d4ff; border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #error {
+    display: none; position: fixed; inset: 0; align-items: center;
+    justify-content: center; flex-direction: column; gap: 12px;
+    color: #ff6b6b; font-family: system-ui, sans-serif; background: #1a1a2e;
+    padding: 2rem; text-align: center;
+  }
+  #error a { color: #00d4ff; }
+</style>
+</head>
+<body>
+<div id="loading"><div class="spinner"></div><div>Cargando dashboard...</div></div>
+<div id="error"><div style="font-size:1.5rem">&#10007; Error al cargar</div><div id="errMsg"></div></div>
+<iframe id="frame" sandbox="allow-scripts allow-same-origin allow-popups" hidden></iframe>
+<script>
+(function() {
+  var ALLOWED = 'raw.githubusercontent.com';
+  var params = new URLSearchParams(location.search);
+  var url = params.get('url') || '';
+
+  if (!url) return showError('Falta el parametro ?url=');
+
+  try {
+    var parsed = new URL(url);
+    if (parsed.hostname !== ALLOWED)
+      return showError('Solo se permiten URLs de ' + ALLOWED);
+  } catch(e) {
+    return showError('URL no valida');
+  }
+
+  fetch(url)
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+    .then(function(html) {
+      document.getElementById('loading').style.display = 'none';
+      var frame = document.getElementById('frame');
+      frame.hidden = false;
+      frame.srcdoc = html;
+    })
+    .catch(function(e) {
+      showError('No se pudo cargar el dashboard: ' + e.message +
+        '<br><a href="' + url + '" target="_blank">Descargar HTML directamente</a>');
+    });
+
+  function showError(msg) {
+    document.getElementById('loading').style.display = 'none';
+    var err = document.getElementById('error');
+    err.style.display = 'flex';
+    document.getElementById('errMsg').innerHTML = msg;
+  }
+})();
+</script>
+</body>
+</html>

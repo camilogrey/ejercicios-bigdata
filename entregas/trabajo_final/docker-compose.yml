@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: qog-postgres
+    environment:
+      POSTGRES_DB: qog_db
+      POSTGRES_USER: spark_user
+      POSTGRES_PASSWORD: spark_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U spark_user -d qog_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - spark-network
+
+  spark-master:
+    image: apache/spark:3.5.4-python3
+    container_name: spark-master
+    user: root
+    command: >
+      bash -c "
+      echo '=== INSTALANDO DEPENDENCIAS ===' &&
+      pip install --no-cache-dir pandas==1.5.3 numpy==1.24.4 scikit-learn==1.3.2 &&
+      pip install --no-cache-dir matplotlib==3.7.4 seaborn==0.13.0 &&
+      pip install --no-cache-dir sqlalchemy==2.0.29 psycopg2-binary==2.9.9 &&
+      echo '=== INICIANDO SPARK MASTER ===' &&
+      exec su spark -c '/opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h spark-master'
+      "
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+      - "4040:4040"
+    environment:
+      SPARK_LOCAL_IP: spark-master
+      SPARK_MASTER_HOST: spark-master
+      SPARK_MASTER_PORT: 7077
+      SPARK_MASTER_WEBUI_PORT: 8080
+    volumes:
+      - ./spark-apps:/opt/spark-apps
+      - ./data:/opt/data
+    networks:
+      - spark-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  spark-worker:
+    image: apache/spark:3.5.4-python3
+    container_name: spark-worker
+    user: root
+    command: >
+      bash -c "
+      echo '=== INSTALANDO DEPENDENCIAS ===' &&
+      pip install --no-cache-dir pandas==1.5.3 numpy==1.24.4 scikit-learn==1.3.2 &&
+      pip install --no-cache-dir matplotlib==3.7.4 seaborn==0.13.0 &&
+      pip install --no-cache-dir sqlalchemy==2.0.29 psycopg2-binary==2.9.9 &&
+      echo '=== CONECTANDO A SPARK MASTER ===' &&
+      exec su spark -c '/opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077'
+      "
+    environment:
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 2g
+      SPARK_LOCAL_IP: spark-worker
+      SPARK_MASTER: spark://spark-master:7077
+    volumes:
+      - ./spark-apps:/opt/spark-apps
+      - ./data:/opt/data
+    ports:
+      - "8081:8081"
+    networks:
+      - spark-network
+    depends_on:
+      - spark-master
+
+networks:
+  spark-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

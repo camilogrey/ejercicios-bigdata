@@ -1,0 +1,130 @@
+# =============================================================================
+# CLAUDE CODE
+# =============================================================================
+.claude/
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# =============================================================================
+# DATA FILES - Archivos de datos
+# =============================================================================
+# IMPORTANTE: GitHub tiene límite de 100MB por archivo
+# nyc_taxi.csv es ~121MB, por lo tanto DEBE ser ignorado
+
+# Bases de datos (GLOBAL - nunca deben subirse al repositorio)
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignorar datos grandes en carpeta datos/ (CSV, Excel, Parquet)
+datos/**/*.csv
+datos/**/*.parquet
+datos/csv_tienda_informatica/
+
+# EXCEPCIONES: Permitir documentación y scripts de descarga
+!datos/**/README.md
+!datos/**/download_instructions.md
+!datos/**/descargar_datos.py
+
+# Ignorar imágenes generadas dinámicamente
+datos/**/*.png
+datos/**/*.jpg
+datos/**/*.gif
+
+# =============================================================================
+# ENTREGAS DE ALUMNOS - Protección
+# =============================================================================
+# Datos generados por alumnos
+entregas/**/data/
+entregas/**/*.csv
+entregas/**/*.xlsx
+entregas/**/*.parquet
+entregas/**/*.json
+entregas/**/*.xml
+entregas/**/*.db
+entregas/**/*.sqlite
+
+# Logs y entornos
+entregas/**/logs/
+entregas/**/venv/
+entregas/**/.venv/
+entregas/**/__pycache__/
+
+# Credenciales
+entregas/**/.env
+!entregas/**/.env.example
+
+# =============================================================================
+# PRIVACIDAD Y SEGURIDAD (PROFESOR)
+# =============================================================================
+
+# 1. Carpeta PRIVADA del profesor (Soluciones, exámenes, notas)
+.profesor/
+
+# 1b. Memoria de Claude Code (contiene referencias a archivos privados)
+CLAUDE.md
+
+# 2. Modulo 07 - Solo 7.3 oculto (7.1 Docker y 7.2 Spark ya publicados)
+ejercicios/07_infraestructura_bigdata/7.3_hadoop_hdfs/
+
+# 4. Configuración local y secretos
+.env
+.env.local
+secrets.txt
+credenciales.txt
+*.pem
+*.key
+
+# 4. Otros archivos privados del profesor
+PROFE.bat
+*.backup
+backups/
+exports/
+evaluaciones/
+*.profesor.md
+
+# =============================================================================
+# SISTEMA OPERATIVO Y LOGS
+# =============================================================================
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.ipynb_checkpoints
+instance/
+.webassets-cache
